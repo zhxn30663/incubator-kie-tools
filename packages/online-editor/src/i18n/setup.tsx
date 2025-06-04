@@ -23,10 +23,12 @@ import { I18nContextType, I18nDictionariesProvider } from "@kie-tools-core/i18n/
 import { OnlineI18n } from "./OnlineI18n";
 import { en } from "./locales";
 import { de } from "./locales";
+import { zh } from "./locales";
 import { I18nDefaults, I18nDictionaries } from "@kie-tools-core/i18n/dist/core";
 
-export const onlineI18nDefaults: I18nDefaults<OnlineI18n> = { locale: "en", dictionary: en };
+export const onlineI18nDefaults: I18nDefaults<OnlineI18n> = { locale: "zh", dictionary: zh };
 export const onlineI18nDictionaries: I18nDictionaries<OnlineI18n> = new Map([
+  ["zh", zh],
   ["en", en],
   ["de", de],
 ]);
@@ -37,7 +39,7 @@ export function OnlineI18nContextProvider(props: { children: any }) {
     <I18nDictionariesProvider
       defaults={onlineI18nDefaults}
       dictionaries={onlineI18nDictionaries}
-      initialLocale={navigator.language}
+      initialLocale="zh"
       ctx={OnlineI18nContext}
     >
       {props.children}
