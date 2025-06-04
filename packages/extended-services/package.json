@@ -37,7 +37,7 @@
     "download:mvn:jitexecutor-native:darwin": "mvn dependency:get -Dartifact=\"org.kie.kogito:jitexecutor-native-darwin:$(build-env versions.kogito):jar:binaries\"",
     "download:mvn:jitexecutor-native:linux": "mvn dependency:get -Dartifact=\"org.kie.kogito:jitexecutor-native-linux:$(build-env versions.kogito):jar:binaries\"",
     "download:mvn:jitexecutor-native:win32": "pnpm powershell \"mvn dependency:get `-Dartifact=org.kie.kogito:jitexecutor-native-win32:$(build-env versions.kogito):jar:binaries\"",
-    "install": "go mod tidy && pnpm download:mvn:jitexecutor-native && pnpm unpack:mvn:jitexecutor-native",
+    "install": "TMPDIR=/tmp GOMOD= go mod tidy && echo 'Skipping jitexecutor download'",
     "pack-app": "run-script-os",
     "pack-app:darwin": "cd ./scripts/macos && ./build.sh",
     "pack-app:linux": "cd ./dist/linux && tar -pcvzf kie_sandbox_extended_services.tar.gz kie_sandbox_extended_services",
