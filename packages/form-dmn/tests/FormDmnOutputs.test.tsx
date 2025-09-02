@@ -34,7 +34,7 @@ describe("FormDmnOutputs tests", () => {
   it("should render the DMNFormResult with the empty state", async () => {
     const { getByText } = render(<FormDmnOutputs {...props} />);
 
-    expect(getByText("No response")).toMatchSnapshot();
+    expect(getByText("无响应")).toMatchSnapshot();
   });
 
   it("should render the FormDmnOutputs with one result", async () => {
@@ -98,8 +98,8 @@ describe("FormDmnOutputs tests", () => {
 
     const { getByText } = render(<FormDmnOutputs {...props} results={results} />);
 
-    expect(getByText("Evaluation failed").tagName).toEqual("A");
-    expect(getByText("Evaluation failed")).toMatchSnapshot();
+    expect(getByText("评估失败").tagName).toEqual("A");
+    expect(getByText("评估失败")).toMatchSnapshot();
   });
 
   it("should render an paragraph tag", async () => {
@@ -115,7 +115,7 @@ describe("FormDmnOutputs tests", () => {
 
     const { getByText } = render(<FormDmnOutputs {...props} notificationsPanel={false} results={results} />);
 
-    expect(getByText("Evaluation failed").tagName).toEqual("P");
-    expect(getByText("Evaluation failed")).toMatchSnapshot();
+    expect(getByText("评估失败").tagName).toEqual("P");
+    expect(getByText("评估失败")).toMatchSnapshot();
   });
 });

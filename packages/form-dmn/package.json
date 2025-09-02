@@ -22,7 +22,8 @@
     "build:prod": "pnpm lint && rimraf dist && pnpm copy:css && tsc -p tsconfig.json && pnpm test",
     "copy:css": "copyfiles -u 1 \"src/**/*.{sass,scss,css}\" dist/",
     "lint": "run-script-if --bool \"$(build-env linters.run)\" --then \"kie-tools--eslint ./src\"",
-    "test": "run-script-if --ignore-errors \"$(build-env tests.ignoreFailures)\" --bool \"$(build-env tests.run)\" --then \"jest  --verbose --passWithNoTests\""
+    "test": "run-script-if --ignore-errors \"$(build-env tests.ignoreFailures)\" --bool \"$(build-env tests.run)\" --then \"jest  --verbose --passWithNoTests\"",
+    "test:update-snapshots": "jest --updateSnapshot --verbose --passWithNoTests"
   },
   "dependencies": {
     "@kie-tools-core/i18n": "workspace:*",

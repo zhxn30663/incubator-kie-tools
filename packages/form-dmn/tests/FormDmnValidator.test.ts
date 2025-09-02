@@ -75,7 +75,7 @@ describe("FormDmnValidator Tests", () => {
       const validate = validator.createValidator(schema.definitions?.InputSet);
       const errors = validate(model);
       expect(errors?.details[0].keyword).toEqual("format");
-      expect(errors?.details[0].message).toEqual("should match format P1D(ays)T2H(ours)3M(inutes)1S(econds)");
+      expect(errors?.details[0].message).toEqual("应匹配格式 P1D(天)T2H(小时)3M(分钟)1S(秒)");
     });
 
     it("invalid model - format", () => {
@@ -89,7 +89,7 @@ describe("FormDmnValidator Tests", () => {
       const validate = validator.createValidator(schema.definitions?.InputSet);
       const errors = validate(model);
       expect(errors?.details[0].keyword).toEqual("format");
-      expect(errors?.details[0].message).toEqual("should match format P1Y(ears)2M(onths)");
+      expect(errors?.details[0].message).toEqual("应匹配格式 P1Y(年)2M(月)");
     });
   });
 
