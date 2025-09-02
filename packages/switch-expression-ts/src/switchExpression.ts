@@ -42,7 +42,7 @@ export const switchExpression = <
     if (hasDefault) {
       return (cases as PartialWithMandatoryDefault<S, R>).default as R;
     }
-    throw new Error("No value provided to switchExpression and no default exists.");
+    throw new Error("没有为switchExpression提供值，且不存在默认值。");
   }
 
   let propertyValue: R | undefined;
@@ -60,5 +60,5 @@ export const switchExpression = <
   if (hasDefault) {
     return (cases as PartialWithMandatoryDefault<S, R>).default as R;
   }
-  throw new Error("Non matched key and no default exists for switchExpression.");
+  throw new Error("不匹配的键，且switchExpression不存在默认值。");
 };

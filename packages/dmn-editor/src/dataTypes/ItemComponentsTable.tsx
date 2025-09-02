@@ -238,11 +238,11 @@ export function ItemComponentsTable({
         <table className={"kie-dmn-editor--data-type-properties-table"}>
           <thead>
             <tr>
-              <th style={{ minWidth: "200px", width: "67%" }}>Name</th>
+              <th style={{ minWidth: "200px", width: "67%" }}>名称</th>
               <th style={{ minWidth: "140px", maxWidth: "140px" }}>Is struct?</th>
-              <th style={{ minWidth: "280px", width: "33%" }}>Type</th>
+              <th style={{ minWidth: "280px", width: "33%" }}>类型</th>
               <th style={{ minWidth: "140px", maxWidth: "140px" }}>Is collection?</th>
-              <th style={{ minWidth: "200px", maxWidth: "200px" }}>Constraints</th>
+              <th style={{ minWidth: "200px", maxWidth: "200px" }}>约束</th>
               <th>{/** Actions */}</th>
             </tr>
           </thead>

@@ -152,14 +152,14 @@ export function TypeRefSelector({
         direction={direction}
         onWheelCapture={(e) => e.stopPropagation()} // Necessary so that Reactflow doesn't mess with this event.
       >
-        <SelectGroup label="Built-in" key="builtin" style={{ minWidth: "300px" }}>
+        <SelectGroup label="内置类型" key="builtin" style={{ minWidth: "300px" }}>
           {builtInFeelTypes.map((dt) => (
             <SelectOption key={dt.name} value={dt.name}>
               {dt.name}
             </SelectOption>
           ))}
         </SelectGroup>
-        <SelectGroup label="Custom" key="custom" style={{ minWidth: "300px" }}>
+        <SelectGroup label="自定义类型" key="custom" style={{ minWidth: "300px" }}>
           {(customDataTypes.length > 0 &&
             customDataTypes.map((dt) => (
               <SelectOption key={dt.feelName} value={dt.feelName}>
@@ -173,7 +173,7 @@ export function TypeRefSelector({
               </SelectOption>
             ))) || <SelectOption key={"None"} value={"None"} isDisabled={true} />}
         </SelectGroup>
-        <SelectGroup label="External" key="external" style={{ minWidth: "300px" }}>
+        <SelectGroup label="外部类型" key="external" style={{ minWidth: "300px" }}>
           {(externalDataTypes.length > 0 &&
             externalDataTypes.map((dt) => (
               <SelectOption key={dt.feelName} value={dt.feelName}>

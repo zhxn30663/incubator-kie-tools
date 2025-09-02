@@ -34,7 +34,7 @@ function FormDmnNotSupportedField({ recursion, recursionRef, ...props }: FormDmn
     <Card isCompact={true} {...filterDOMProps(props)}>
       <CardBody style={{ backgroundColor: "rgb(240,240,240)" }}>
         <div
-          aria-label="field type not supported"
+          aria-label="不支持字段类型"
           style={{
             display: "flex",
             justifyContent: "center",
@@ -42,7 +42,7 @@ function FormDmnNotSupportedField({ recursion, recursionRef, ...props }: FormDmn
             width: "100%",
           }}
         >
-          Recursive structures <br /> are not supported yet
+          递归结构 <br /> 尚不支持
         </div>
       </CardBody>
     </Card>

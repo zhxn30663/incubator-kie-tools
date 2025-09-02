@@ -77,16 +77,16 @@ class DmnValidation extends DmnMarshallerBackendCompatibilityTesterScript {
                     return validateDMNModelsNoImports();
                 case "with_imports": {
                     if (importedDmnFilesPath == null || importedDmnFilesPath.length == 0) {
-                        throw new IllegalArgumentException("Imported DMN paths are missing");
+                        throw new IllegalArgumentException("缺少导入的DMN路径");
                     }
                     return validateDMNModelsWithImports();
                 }
                 default:
-                    LOGGER.error("Unknown command {}", command);
+                    LOGGER.error("未知命令 {}", command);
                     return 1;
             }
         } catch (Exception e) {
-            LOGGER.error("Failed to execute {}", command, e);
+            LOGGER.error("执行 {}" + "失败", command, e);
             return 100;
         }
     }
@@ -119,15 +119,15 @@ class DmnValidation extends DmnMarshallerBackendCompatibilityTesterScript {
 
     private int assessDMNMessageResults(List<DMNMessage> dmnMessageResults, String dmnFileName) {
         if (dmnMessageResults.size() == 0) {
-            LOGGER.info("RESULT: Following files have been successfully validated!");
+            LOGGER.info("结果：以下文件已成功验证！");
             return 0;
         } else {
-            LOGGER.error("ERROR: DMN Validation failed for the DMN file " + dmnFileName);
-            LOGGER.error("Validation Errors:");
+            LOGGER.error("错误：DMN文件 " + dmnFileName + " 的DMN验证失败");
+            LOGGER.error("验证错误：");
             List<String> messages = dmnMessageResults.stream().map(DMNMessage::getText).collect(Collectors.toList());
             messages.forEach(LOGGER::error);
-            System.err.println("ERROR: DMN Validation failed!");
-            System.err.println("DMN File Name: " + dmnFileName);
+            System.err.println("错误：DMN验证失败！");
+            System.err.println("DMN文件名：" + dmnFileName);
             messages.forEach(System.err::println);
             return 1;
         }

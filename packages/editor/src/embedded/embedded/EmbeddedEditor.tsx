@@ -164,7 +164,7 @@ const RefForwardingEmbeddedEditor: React.ForwardRefRenderFunction<EmbeddedEditor
         type: ke.type,
         channelOriginalTargetTagName: (ke.target as HTMLElement)?.tagName,
       };
-      console.debug(`New keyboard event (${JSON.stringify(channelKeyboardEvent)})!`);
+      console.debug(`新键盘事件 (${JSON.stringify(channelKeyboardEvent)})！`);
       envelopeServer.envelopeApi.notifications.kogitoKeyboardShortcuts_channelKeyboardEvent.send(channelKeyboardEvent);
     },
     []

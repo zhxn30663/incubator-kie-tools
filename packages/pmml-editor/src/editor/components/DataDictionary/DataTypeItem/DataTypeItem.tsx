@@ -224,8 +224,8 @@ const DataTypeItem = (props: DataTypeItemProps) => {
                       <SplitItem>
                         <FormGroup
                           fieldId="name"
-                          label="Name"
-                          helperTextInvalid="Name is mandatory and must be unique"
+                          label="名称"
+                          helperTextInvalid="名称是必填的，且必须唯一"
                           helperTextInvalidIcon={<ExclamationCircleIcon />}
                           validated={validation}
                           style={{ width: 280 }}
@@ -238,7 +238,7 @@ const DataTypeItem = (props: DataTypeItemProps) => {
                             name="name"
                             value={name}
                             onChange={handleNameChange}
-                            placeholder="Name"
+                            placeholder="名称"
                             validated={validation}
                             onBlur={handleNameSave}
                             autoComplete="off"
@@ -246,16 +246,16 @@ const DataTypeItem = (props: DataTypeItemProps) => {
                         </FormGroup>
                       </SplitItem>
                       <SplitItem>
-                        <FormGroup fieldId="type" label="Type" isRequired={true} data-ouia-component-type="field-type">
+                        <FormGroup fieldId="type" label="类型" isRequired={true} data-ouia-component-type="field-type">
                           <Select
                             id="type"
                             variant={SelectVariant.single}
-                            aria-label="Select Input Type"
+                            aria-label="选择输入类型"
                             onToggle={typeToggle}
                             onSelect={typeSelect}
                             selections={typeSelection}
                             isOpen={isTypeSelectOpen}
-                            placeholder="Type"
+                            placeholder="类型"
                             className="data-type-item__type-select"
                             menuAppendTo={"parent"}
                           >
@@ -273,19 +273,19 @@ const DataTypeItem = (props: DataTypeItemProps) => {
                       <SplitItem>
                         <FormGroup
                           fieldId="optype"
-                          label="Op Type"
+                          label="操作类型"
                           isRequired={true}
                           data-ouia-component-type="field-optype"
                         >
                           <Select
                             id="optype"
                             variant={SelectVariant.single}
-                            aria-label="Select Op Type"
+                            aria-label="选择操作类型"
                             onToggle={optypeToggle}
                             onSelect={optypeSelect}
                             selections={optypeSelection}
                             isOpen={isOptypeSelectOpen}
-                            placeholder="Op Type"
+                            placeholder="操作类型"
                             className="data-type-item__type-select"
                             menuAppendTo={"parent"}
                           >
@@ -329,7 +329,7 @@ const DataTypeItem = (props: DataTypeItemProps) => {
                           data-ouia-component-id="edit-props"
                           data-ouia-component-type="link-label"
                         >
-                          Edit Properties
+                          编辑属性
                         </Label>
                       </SplitItem>
                     </Split>

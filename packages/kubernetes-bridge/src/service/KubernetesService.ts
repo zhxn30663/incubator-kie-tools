@@ -75,7 +75,7 @@ export class KubernetesService {
 
   public async withFetch<T = Resource>(callback: (fetcher: ResourceFetcher) => Promise<T>): Promise<T> {
     if (!isKubernetesConnectionValid(this.args.connection)) {
-      throw new Error("The Kubernetes connection is not valid");
+      throw new Error("Kubernetes连接无效");
     }
 
     return callback(this.fetcher);

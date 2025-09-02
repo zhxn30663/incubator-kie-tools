@@ -54,6 +54,6 @@ console.info("\n\n[bootstrap] Checking packages dependencies...");
 execSync(`node ${require.resolve("./check_packages_dependencies.js")}`, execOpts);
 
 console.info("\n\n[bootstrap] Formatting auto-generated files...");
-execSync(`pnpm pretty-quick`, execOpts);
+execSync(`pnpm prettier --write .`, execOpts);
 
 console.info("\n\n[bootstrap] Done.");

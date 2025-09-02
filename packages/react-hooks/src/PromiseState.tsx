@@ -95,7 +95,7 @@ export function usePromiseState<T>(): [
       } else if (ns.loading) {
         return { status: PromiseStateStatus.PENDING };
       } else {
-        throw new Error("Invalid promise state");
+        throw new Error("无效的promise状态");
       }
     });
   }, []);
@@ -172,7 +172,7 @@ export function useLivePromiseState<T>(
           if (canceled.get()) {
             return;
           }
-          console.log(e);
+          console.log("处理Promise时出错：", e);
           setState({ error: e });
         });
     },

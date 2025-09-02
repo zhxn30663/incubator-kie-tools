@@ -53,7 +53,7 @@ export function DecisionProperties({
 
   return (
     <>
-      <FormGroup label="Name">
+      <FormGroup label="名称">
         <InlineFeelNameInput
           enableAutoFocusing={false}
           isPlain={false}
@@ -75,7 +75,7 @@ export function DecisionProperties({
         />
       </FormGroup>
 
-      <FormGroup label="Data type">
+      <FormGroup label="数据类型">
         <TypeRefSelector
           heightRef={dmnEditorRootElementRef}
           typeRef={resolvedTypeRef}
@@ -90,7 +90,7 @@ export function DecisionProperties({
         />
       </FormGroup>
 
-      <FormGroup label="Description">
+      <FormGroup label="描述">
         <TextArea
           aria-label={"Description"}
           type={"text"}
@@ -115,7 +115,7 @@ export function DecisionProperties({
         </ClipboardCopy>
       </FormGroup>
 
-      <FormGroup label="Question">
+      <FormGroup label="问题">
         <TextArea
           aria-label={"Question"}
           type={"text"}
@@ -134,7 +134,7 @@ export function DecisionProperties({
         />
       </FormGroup>
 
-      <FormGroup label="Allowed answers">
+      <FormGroup label="允许的答案">
         <TextArea
           aria-label={"Allowed answers"}
           type={"text"}

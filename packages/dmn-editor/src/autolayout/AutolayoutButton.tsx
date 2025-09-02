@@ -63,7 +63,7 @@ export function AutolayoutButton() {
   }, [dmnEditorStoreApi, externalModelsByNamespace]);
 
   return (
-    <button className={"kie-dmn-editor--autolayout-panel-toggle-button"} onClick={onClick} title={"Autolayout (beta)"}>
+    <button className={"kie-dmn-editor--autolayout-panel-toggle-button"} onClick={onClick} title={"自动布局 (测试版)"}>
       <OptimizeIcon />
     </button>
   );

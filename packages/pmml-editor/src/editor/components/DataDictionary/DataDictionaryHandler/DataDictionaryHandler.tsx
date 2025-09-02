@@ -114,7 +114,7 @@ const DataDictionaryHandler = () => {
     <Split hasGutter={true}>
       <SplitItem isFilled={true}>
         <Title headingLevel="h1" size={TitleSizes["2xl"]}>
-          Data Dictionary
+          数据字典
         </Title>
       </SplitItem>
       <SplitItem>
@@ -134,7 +134,7 @@ const DataDictionaryHandler = () => {
     <>
       {validations.length === 0 && (
         <Button variant="secondary" onClick={handleDataDictionaryToggle} data-title="DataDictionary">
-          Set Data Dictionary
+          设置数据字典
         </Button>
       )}
       {validations.length > 0 && (
@@ -145,13 +145,13 @@ const DataDictionaryHandler = () => {
             onClick={handleDataDictionaryToggle}
             data-title="DataDictionary"
           >
-            Set Data Dictionary
+            设置数据字典
           </Button>
         </ValidationIndicatorTooltip>
       )}
       <Modal
         aria-label="data-dictionary"
-        title="Data Dictionary"
+        title="数据字典"
         header={header}
         isOpen={isDataDictionaryOpen}
         showClose={false}

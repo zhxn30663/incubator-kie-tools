@@ -60,22 +60,22 @@ const OutputsBatchAdd = ({ onAdd, onCancel }: OutputsBatchAddProps) => {
       <Stack hasGutter={true}>
         <StackItem>
           <TextContent>
-            <Text component={TextVariants.h3}>Add Multiple Output Fields</Text>
+            <Text component={TextVariants.h3}>添加多个输出字段</Text>
             <Text component={TextVariants.p}>
-              You can add multiple outputs by entering their names below. Add them one per line.
+              您可以通过在下方输入名称来添加多个输出。每行一个。
               <br />
-              They will be created with the default type of <em>String</em>. You will be able to edit them later.
+              它们将以默认类型<em>字符串</em>创建。您可以稍后编辑它们。
             </Text>
           </TextContent>
         </StackItem>
         <StackItem>
           <Form onSubmit={handleSubmit} style={{ gridGap: 0 }}>
             <FormGroup
-              label="Outputs"
+              label="输出"
               fieldId="outputs"
               isRequired={true}
               validated={inputValidation}
-              helperTextInvalid={"Please enter at least one Output name"}
+              helperTextInvalid={"请输入至少一个输出名称"}
             >
               <TextArea
                 className="outputs-container__multiple-outputs"
@@ -84,15 +84,15 @@ const OutputsBatchAdd = ({ onAdd, onCancel }: OutputsBatchAddProps) => {
                 name="outputs"
                 isRequired={true}
                 id="outputs"
-                placeholder={"First Output\nSecond Output\n..."}
+                placeholder={"第一个输出\n第二个输出\n..."}
               />
             </FormGroup>
             <ActionGroup>
               <Button variant="primary" type="submit">
-                Add Them
+                添加它们
               </Button>
               <Button variant="link" onClick={() => onCancel()}>
-                Never mind
+                取消
               </Button>
             </ActionGroup>
           </Form>

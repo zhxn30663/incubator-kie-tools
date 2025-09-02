@@ -73,6 +73,6 @@ export class ResourceFetcher {
       }
     }
 
-    throw new Error(`Error fetching ${args.target.name()}`, { cause: error });
+    throw new Error(`获取${args.target.name()}时出错`, { cause: error });
   }
 }

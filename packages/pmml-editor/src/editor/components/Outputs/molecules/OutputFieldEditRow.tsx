@@ -151,10 +151,10 @@ const OutputFieldEditRow = (props: OutputFieldEditRowProps) => {
           <Split hasGutter={true}>
             <SplitItem>
               <FormGroup
-                label="Name"
+                label="名称"
                 fieldId="output-name-helper"
                 isRequired={true}
-                helperTextInvalid="Name is mandatory and must be unique"
+                helperTextInvalid="名称是必填的，且必须唯一"
                 helperTextInvalidIcon={<ExclamationCircleIcon />}
                 validated={name?.valid ? "default" : "error"}
               >
@@ -164,7 +164,7 @@ const OutputFieldEditRow = (props: OutputFieldEditRowProps) => {
                   name="output-name"
                   aria-describedby="output-name-helper"
                   value={name?.value?.toString() ?? ""}
-                  placeholder="Name"
+                  placeholder="名称"
                   validated={name?.valid ? "default" : "error"}
                   autoFocus={true}
                   onChange={(e) => {
@@ -191,7 +191,7 @@ const OutputFieldEditRow = (props: OutputFieldEditRowProps) => {
             </SplitItem>
             <SplitItem isFilled={true}>
               <FormGroup
-                label="Data type"
+                label="数据类型"
                 fieldId="output-dataType-helper"
                 style={{ width: "12em" }}
                 isRequired={true}
@@ -214,7 +214,7 @@ const OutputFieldEditRow = (props: OutputFieldEditRowProps) => {
                   }}
                   selections={dataType}
                   isOpen={isTypeSelectOpen}
-                  placeholder="Type"
+                  placeholder="类型"
                   menuAppendTo={"parent"}
                 >
                   {dataTypes.map((dt, _index) => (
@@ -228,7 +228,7 @@ const OutputFieldEditRow = (props: OutputFieldEditRowProps) => {
         <StackItem>
           <Split>
             <SplitItem>
-              <FormGroup label="Properties" fieldId="output-labels-helper">
+              <FormGroup label="属性" fieldId="output-labels-helper">
                 <OutputLabelsEditMode
                   optype={optype}
                   setOptype={setOptype}

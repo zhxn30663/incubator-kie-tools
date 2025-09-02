@@ -53,7 +53,7 @@ export function BkmProperties({
 
   return (
     <>
-      <FormGroup label="Name">
+      <FormGroup label="名称">
         <InlineFeelNameInput
           enableAutoFocusing={false}
           isPlain={false}
@@ -75,7 +75,7 @@ export function BkmProperties({
         />
       </FormGroup>
 
-      <FormGroup label="Data type">
+      <FormGroup label="数据类型">
         <TypeRefSelector
           heightRef={dmnEditorRootElementRef}
           typeRef={resolvedTypeRef}
@@ -92,7 +92,7 @@ export function BkmProperties({
         />
       </FormGroup>
 
-      <FormGroup label="Description">
+      <FormGroup label="描述">
         <TextArea
           aria-label={"Description"}
           type={"text"}

@@ -26,692 +26,700 @@ export const en: OnlineI18n = {
   ...en_common,
   editorPage: {
     textEditorModal: {
-      title: (fileName: string) => `Editing ${fileName}`,
+      title: (fileName: string) => `正在编辑 ${fileName}`,
     },
     alerts: {
       setContentError: {
-        title: "Error opening file. You can edit it as text and reopen the diagram after you've fixed it.",
-        action: "Open as text",
+        title: "文件打开出错。你可以以文本方式编辑，并在修复后重新打开图表。",
+        action: "以文本方式打开",
       },
-      copy: "Content copied to clipboard",
-      updateGist: "Gist successfully updated.",
-      createGist: "Gist successfully created.",
-      errorPushingGist: "Failed to Push an update to your current Gist. Attempt to Push forcefully?",
-      updateSnippet: "Snippet successfully updated.",
-      createSnippet: "Snippet successfully created.",
-      errorPushingSnippet: "Failed to Push an update to your current Snippet. Attempt to Push forcefully?",
-      forcePushWarning: "WARNING: This will overwrite your Gist with the local changes!",
-      invalidCurrentGist: `Your current gist ${en_common.names.url} is invalid. If you've updated its filename, it's necessary to update your ${en_common.names.url} as well.`,
-      invalidGistFilename: "Invalid filename. This gist already has a file with this name.",
-      error: `An error occurred trying to perform the last operation. Check if your authentication token is still valid and try again later.`,
+      copy: "内容已复制到剪贴板",
+      updateGist: "Gist 更新成功。",
+      createGist: "Gist 创建成功。",
+      errorPushingGist: "推送更新到当前 Gist 失败。是否尝试强制推送？",
+      updateSnippet: "代码片段更新成功。",
+      createSnippet: "代码片段创建成功。",
+      errorPushingSnippet: "推送更新到当前代码片段失败。是否尝试强制推送？",
+      forcePushWarning: "警告：此操作将使用本地更改覆盖你的 Gist！",
+      invalidCurrentGist: `当前Gist ${en_common.names.url} 无效. 如需更新文件名, 需同步更新 ${en_common.names.url} 。`,
+      invalidGistFilename: "文件名无效。此 Gist 中已存在同名文件。",
+      error: `执行最后一次操作时发生错误。请检查你的认证Token是否仍然有效，并稍后再试。`,
       unsaved: {
-        titleLocal: "You have new changes since your last download.",
-        titleGit: "You have new changes since your last Push.",
-        proceedAnyway: "Proceed anyway",
-        message: "Your files are temporarily persisted on your browser, but may be erased before you come back.",
+        titleLocal: "自上次下载以来，有新的更改。",
+        titleGit: "自上次推送以来，有新的更改",
+        proceedAnyway: "仍然继续",
+        message: "你的文件会临时保存在浏览器中，但可能会在你返回之前被清除。",
       },
     },
     error: {
       title: `${en_common.terms.oops}!`,
-      explanation: `The ${en_common.names.dmnRunner} couldn't be rendered due to an error.`,
+      explanation: `${en_common.names.dmnRunner} 因错误无法渲染。`,
       message: [
-        `This ${en_common.names.dmn} has a construct that is not supported. Please refer to `,
+        `${en_common.names.dmn} 包含不支持的构造。请参考 `,
         wrapped("jira"),
-        " and report an issue. Don't forget to upload the current file, and the used inputs",
+        " 并报告问题。别忘了上传当前文件以及所用输入。",
       ],
     },
   },
   editorToolbar: {
-    closeAndReturnHome: "Close and return Home",
-    saveAndDownload: "Save & Download",
-    sendChangesToGitHub: `Send changes to ${en_common.names.github}`,
-    copySource: "Copy Source",
+    closeAndReturnHome: "关闭并返回主页",
+    saveAndDownload: "保存并下载",
+    sendChangesToGitHub: `发送更改到 ${en_common.names.github}`,
+    copySource: "复制源代码",
     downloadSVG: `${en_common.terms.download} ${en_common.names.svg}`,
-    setGitHubToken: `Setup`,
-    createGist: "Create Gist",
-    cantCreateGistTooltip: `You can't create a Gist because you're either not logged in, or your models are in nested directories.`,
-    cantUpdateGistTooltip: `You can't update your Gist because you're either not logged in, not the owner, or your models are in nested directories.`,
-    createSnippet: "Create Snippet",
-    cantCreateSnippetTooltip: `You can't create a Snippet because you're either not logged in, or your models are in nested directories.`,
-    cantUpdateSnippetTooltip: `You can't update your Snippet because you're either not logged in, not the owner, or your models are in nested directories.`,
-    share: "Share",
-    embed: "Embed",
+    setGitHubToken: `设置`,
+    createGist: "创建 Gist",
+    cantCreateGistTooltip: `无法创建 Gist，因为你未登录，或者你的模型位于嵌套目录中。`,
+    cantUpdateGistTooltip: `无法更新 Gist，因为你未登录、不是所有者，或你的模型位于嵌套目录中。`,
+    createSnippet: "创建代码片段",
+    cantCreateSnippetTooltip: `无法创建代码片段，因为你未登录，或者你的模型位于嵌套目录中。`,
+    cantUpdateSnippetTooltip: `无法更新代码片段，因为你未登录、不是所有者，或你的模型位于嵌套目录中。`,
+    share: "分享",
+    embed: "嵌入",
   },
+
+
   accelerators: {
-    commitMessage: (appName: string, acceleratorName: string) => `${appName}: Applying ${acceleratorName} Accelerator`,
-    loadingAlert: (acceleratorName: string) => `Applying ${acceleratorName} Accelerator...`,
-    successAlert: (acceleratorName: string) => `Successfully applied ${acceleratorName} Accelerator`,
-    failAlert: (acceleratorName: string) => `Failed to apply ${acceleratorName} Accelerator`,
+    commitMessage: (appName: string, acceleratorName: string) => `${appName}: 正在应用 ${acceleratorName} 加速器`,
+    loadingAlert: (acceleratorName: string) => `正在应用 ${acceleratorName} 加速器...`,
+    successAlert: (acceleratorName: string) => `已成功应用 ${acceleratorName} 加速器`,
+    failAlert: (acceleratorName: string) => `应用 ${acceleratorName} 加速器失败`,
     acceleratorDescription:
-      "An Accelerator is a template. Applying it will move your current files according to the Accelerator specifications and create a new commit for it.",
-    acceleratorDetails: "This Accelerator is hosted at",
-    dmnFilesMove: "Decisions (.dmn) will be moved to:",
-    dmnFilesLocation: "Decisions (.dmn) were moved to:",
-    pmmlFilesMove: "Score cards (.pmml) will moved to:",
-    pmmlFilesLocation: "Score cards (.pmml) were moved to:",
-    bpmnFilesMove: "Workflows (.bpmn, .bpmn2) will be moved to:",
-    bpmnFilesLocation: "Workflows (.bpmn, .bpmn2) were moved to:",
-    otherFilesMove: "Other files will be moved to:",
-    otherFilesLocation: "Other files were moved to:",
-    applyAccelerator: "Apply Accelerator",
-    appliedAt: "This Accelerator was applied at:",
+      "加速器是一种模板。应用它会根据加速器的规范移动你当前的文件，并为其创建一个新的提交。",
+    acceleratorDetails: "该加速器托管于",
+    dmnFilesMove: "决策文件 (.dmn) 将被移动到：",
+    dmnFilesLocation: "决策文件 (.dmn) 已被移动到：",
+    pmmlFilesMove: "评分卡 (.pmml) 将被移动到：",
+    pmmlFilesLocation: "评分卡 (.pmml) 已被移动到：",
+    bpmnFilesMove: "工作流 (.bpmn, .bpmn2) 将被移动到：",
+    bpmnFilesLocation: "工作流 (.bpmn, .bpmn2) 已被移动到：",
+    otherFilesMove: "其他文件将被移动到：",
+    otherFilesLocation: "其他文件已被移动到：",
+    applyAccelerator: "应用加速器",
+    appliedAt: "该加速器应用于：",
     applyDisclaimer:
-      "This action is permanent. Any changes made after applying an Accelerator may result in your files being in different directories.",
+      "此操作是永久性的。在应用加速器后进行的任何更改，可能会导致你的文件位于不同的目录中。",
   },
+
+
   devDeployments: {
     common: {
-      deployYourModel: "Deploy",
-      deployInstanceInfo: "Deploy instance information",
+      deployYourModel: "部署",
+      deployInstanceInfo: "部署实例信息",
       disclaimer:
-        "When you set up the required information, you are able to create Dev Deployments on your configured instance. All the information you provide is locally stored in the browser and is never shared with anyone.",
-      learnMore: "Learn more",
-      requiredField: "This field cannot be empty.",
-      deploying: "Deploying ...",
-      deleting: "Deleting ...",
-      saving: "Saving ...",
-      setupFirst: `Set up your ${en_common.names.devDeployments} to be able to deploy your models`,
+        "在设置好所需信息后，可在已配置的实例上创建开发部署。所有信息仅保存在浏览器本地。",
+      learnMore: "了解更多",
+      requiredField: "此字段不能为空。",
+      deploying: "正在部署...",
+      deleting: "正在删除...",
+      saving: "正在保存...",
+      setupFirst: `请先设置 ${en_common.names.devDeployments} 以便能够部署模型`,
     },
     dropdown: {
-      noDeployments: "Your deployments show up here",
-      connectedTo: (username: string) => `Connected to  '${username}'`,
-      connectedToAction: "Change...",
-      deleteDeployments: "Delete all",
+      noDeployments: "部署会显示在这里",
+      connectedTo: (username: string) => `已连接到 '${username}'`,
+      connectedToAction: "更改...",
+      deleteDeployments: "删除全部",
       item: {
-        upTooltip: "This deployment is up and running.",
-        downTooltip: "This deployment is not running.",
-        inProgressTooltip: "This deployment is in progress and it will be available shortly.",
+        upTooltip: "此部署正在运行。",
+        downTooltip: "此部署未运行。",
+        inProgressTooltip: "此部署正在进行中，很快就会可用。",
         errorTooltip:
-          "Some unexpected error happened during the deploy process. Check the logs in your instance for further information.",
-        createdAt: (date: string) => `Created at ${date}`,
+          "部署过程中发生了意外错误。请检查实例中的日志以获取更多信息。",
+        createdAt: (date: string) => `创建于 ${date}`,
       },
     },
     configModal: {
-      hostInfo: `The hostname associated with your instance.`,
-      namespaceInfo: `The Namespace (project) you want your Dev Deployments to be.`,
-      tokenInfo: `The token associated with your instance.`,
-      insecurelyDisableTlsCertificateValidation: "Insecurely disable TLS certificate validation",
+      hostInfo: `与实例关联的主机名。`,
+      namespaceInfo: `要创建 Dev Deployments 的命名空间（项目）。`,
+      tokenInfo: `与实例关联的Token。`,
+      insecurelyDisableTlsCertificateValidation: "不安全地禁用 TLS 证书验证",
       insecurelyDisableTlsCertificateValidationInfo:
-        "Checking this option will insecurely disable TLS certificate verification for this account. This is an alternative to not having to deal with the browser's restrictions when your cluster is behind an HTTPS endpoint with a self-signed certificate. Please be advised that the use of self-signed certificates is a weaker form of security, so consider contacting your cluster admins to use a trusted certificate. For more information, refer to <a href='https://cwe.mitre.org/data/definitions/295.html' target='_blank'>https://cwe.mitre.org/data/definitions/295.html</a>.",
-      validationError: "You must fill out all required fields before you can proceed.",
-      connectionError: "Connection refused. Please check the information provided.",
+        "勾选此选项将不安全地禁用此账户的 TLS 证书验证。这可以避免当集群位于使用自签名证书的 HTTPS 端点时，浏览器带来的限制。但请注意，自签名证书的安全性较弱，建议联系集群管理员使用可信证书。更多信息请参考 <a href='https://cwe.mitre.org/data/definitions/295.html' target='_blank'>https://cwe.mitre.org/data/definitions/295.html</a>。",
+      validationError: "必须填写所有必填字段才能继续。",
+      connectionError: "连接被拒绝。请检查所提供的信息。",
       missingPermissions:
-        "Missing the required permissions for Dev Deployments (deployments, services, ingresses). Check your user permissions and try again.",
-      namespaceNotFound: (namespace: string) => `The namespace ${namespace} was not found in your cluster.`,
-      configExpiredWarning: "Token or account expired. Please update your configuration.",
-      useOpenShiftWizard: "Configure a new Developer Sandbox for Red Hat OpenShift through the guided wizard",
-      useKubernetesWizard: "Configure a new local Kubernetes cluster through the guided wizard",
+        "缺少 Dev Deployments 所需权限（deployments、services、ingresses）。请检查用户权限后重试。",
+      namespaceNotFound: (namespace: string) => `集群中未找到命名空间 ${namespace}。`,
+      configExpiredWarning: "Token或账户已过期。请更新配置信息。",
+      useOpenShiftWizard: "通过向导配置新的 Red Hat OpenShift 沙盒（暂不可用）",
+      useKubernetesWizard: "通过向导配置新的本地 Kubernetes 集群",
     },
+
     deployConfirmModal: {
-      title: "Deploy",
-      body: "This action can take a few minutes to be completed and you will need to create a new deployment if you update your model, as Dev Deployments are immutable.",
+      title: "部署",
+      body: "此操作可能需要几分钟才能完成。如果更新模型，需要重新创建部署，因为 Dev Deployments 是不可变的。",
     },
     deleteConfirmModal: {
-      title: "Delete Dev Deployment(s)",
-      body: "Are you sure you want to delete your Dev Deployment(s)?",
+      title: "删除 Dev Deployment(s)",
+      body: "确定要删除 Dev Deployment(s) 吗？",
     },
     alerts: {
       deployStartedError:
-        "Something went wrong when creating your Dev Deployment. Please check your configuration and try again.",
-      deployStartedSuccess: "Your Dev Deployment has been successfully started and will be available shortly.",
-      deleteError: "Failed to delete Dev Deployment(s). Please try again via OpenShift Console or CLI.",
-      deleteSuccess: "Dev Deployment(s) successfully deleted.",
+        "创建 Dev Deployment 时发生错误。请检查配置信息并重试。",
+      deployStartedSuccess: "Dev Deployment 已成功启动，很快即可使用。",
+      deleteError: "删除 Dev Deployment(s) 失败。请通过 OpenShift 控制台或 CLI 重试。",
+      deleteSuccess: "Dev Deployment(s) 已成功删除。",
     },
+
     introduction: {
-      explanation: `Create Dev Deployments in the cloud and share with others.`,
-      disclaimer: `${
-        en_common.names.devDeployments
-      } is intended for ${"development".bold()} and should not be used for business-critical workloads.`,
-      getStarted: "To get started, configure your instance information.",
+      explanation: `在云端创建 Dev Deployments 并与他人共享。`,
+      disclaimer: `${en_common.names.devDeployments
+        } 仅适用于 ${"development".bold()} 在关键业务负载中使用需测试。`,
+      getStarted: "要开始，请先配置实例信息。",
     },
     openShiftConfigWizard: {
       header: {
-        provider: "Provider",
+        provider: "提供商",
       },
       steps: {
         first: {
-          name: "Create your instance",
-          introduction: `In order to create your ${en_common.names.shortDevSandbox} instance:`,
-          goToGetStartedPage: "Go to the Get Started page",
-          followSteps: `Follow the steps to launch your instance. You will be asked to log in with your ${en_common.names.redHat} account.`,
-          informNamespace: `Once your instance is up and running, inform the Namespace (project) where you want your Dev Deployments created.`,
+          name: "创建实例",
+          introduction: `要创建 ${en_common.names.shortDevSandbox} 实例:`,
+          goToGetStartedPage: "前往Get Started页面",
+          followSteps: `按照步骤启动实例。系统会要求使用 ${en_common.names.redHat} 账号。`,
+          informNamespace: `实例启动并运行后，请填写要创建 Dev Deployments 的命名空间（项目）。`,
           inputReason:
-            "This information is necessary for creating your Dev Deployments in the right Namespace (project).",
-          namespacePlaceholder: `The Namespace (project) where you want to create your Dev Deployments.`,
+            "这些信息是为了在正确的命名空间（项目）中创建 Dev Deployments。",
+          namespacePlaceholder: `要创建 Dev Deployments 的命名空间（项目）。`,
         },
         second: {
-          name: "Set credentials",
-          introduction: `In your ${en_common.names.shortDevSandbox} instance:`,
-          accessLoginCommand: `Click on your username on the top right corner and then ${"'Copy login command'".bold()}.`,
-          accessDisplayToken: `If asked, log in with ${"'DevSandbox'".bold()}, and then access the ${"'Display Token'".bold()} link.`,
-          copyInformation: `In ${"'Log in with this token'".bold()} section, copy your ${"'--server'".bold()} and ${"'--token'".bold()} values, and paste them below.`,
-          inputReason: "This information is necessary for establishing a connection with your instance.",
-          hostPlaceholder: "Paste the --server value here",
-          tokenPlaceholder: "Paste the --token value here",
+          name: "设置凭据",
+          introduction: `在 ${en_common.names.shortDevSandbox} 实例中：`,
+          accessLoginCommand: `点击右上角的用户名，然后选择 ${"'Copy login command'".bold()}.`,
+          accessDisplayToken: `如果出现提示，请使用 ${"'DevSandbox'".bold()}, 然后进入 ${"'Display Token'".bold()}  链接。`,
+          copyInformation: `在 ${"'Log in with this token'".bold()}部分, 复制 ${"'--server'".bold()} 和 ${"'--token'".bold()} 的值，并粘贴到下方。`,
+          inputReason: "这些信息用于建立与实例的连接。",
+          hostPlaceholder: "在此粘贴 --server 的值",
+          tokenPlaceholder: "在此粘贴 --token 的值",
         },
         final: {
-          name: "Connect",
-          connectionSuccess: "Connection successfully established.",
-          connectionError: "Connection refused.",
-          introduction: "Now you are able to create Dev Deployments on this OpenShift instance.",
-          configNote: "The token you provide is locally stored in this browser and is never shared with anyone.",
-          connectionErrorLong: `A connection with your ${en_common.names.shortDevSandbox} instance could not be established.`,
-          checkInfo: "Please check the information provided and try again.",
+          name: "连接",
+          connectionSuccess: "连接已成功建立。",
+          connectionError: "连接被拒绝。",
+          introduction: "现在可以在此 OpenShift 实例上创建 Dev Deployments。",
+          configNote: "所提供的Token仅保存在本地浏览器中，不会与任何人共享。",
+          connectionErrorLong: `无法与 ${en_common.names.shortDevSandbox} 实例建立连接。`,
+          checkInfo: "请检查所填信息并重试。",
           possibleErrorReasons: {
-            introduction: "Here are some possible reasons:",
-            emptyField: "One or more required information are not filled.",
+            introduction: "可能的原因包括：",
+            emptyField: "一个或多个必填信息未填写。",
             instanceExpired:
-              "Instances expire in 30 days. After this period, you will need to recreate it, thus receiving a new host.",
-            tokenExpired: "Tokens expire on a daily basis.",
+              "实例在 30 天后会过期。届时需要重新创建，并会获得新的主机地址。",
+            tokenExpired: "Token有效期为1天。",
           },
         },
       },
     },
     kubernetesConfigWizard: {
       header: {
-        provider: "Provider",
+        provider: "环境",
       },
       fields: {
-        namespace: "Namespace",
-        namespaceInfo: "The Namespace in the cluster where your Dev Deployments will be created.",
-        kubernetesApiServerUrl: "Kubernetes API Server URL",
-        kubernetesApiServerUrlInfo: "The hostname associated with the Kubernetes API Server from your cluster.",
-        tokenInfo: "The token associated with your Service Account.",
+        namespace: "命名空间",
+        namespaceInfo: "集群中将创建 Dev Deployments 的命名空间。",
+        kubernetesApiServerUrl: "Kubernetes API 服务器 URL",
+        kubernetesApiServerUrlInfo: "与集群中 Kubernetes API 服务器关联的主机名。",
+        tokenInfo: "与服务账户关联的令牌。",
       },
       steps: {
         first: {
-          name: "Create your Kubernetes cluster",
+          name: "创建 Kubernetes 集群",
           introduction:
-            "In order to create your local Kubernetes cluster first select the flavor you would like and follow the steps:",
-          installFlavor: (flavor: string) => `Download and install ${flavor}.`,
-          installKubectl: "Install Kubectl if you don't have it already.",
-          runCommandsTerminal: "For this step, run the commands in a terminal.",
-          createCluster: "Create your cluster:",
-          installIngress: "Install the Ingress Controller and wait for it to be ready:",
+            "要创建本地 Kubernetes 集群，首先选择所需的发行版并按照步骤操作：",
+          installFlavor: (flavor: string) => `下载并安装 ${flavor}。`,
+          installKubectl: "如果尚未安装 Kubectl，请先安装。",
+          runCommandsTerminal: "在此步骤中，请在终端中运行以下命令。",
+          createCluster: "创建集群：",
+          installIngress: "安装 Ingress 控制器并等待其就绪：",
           installKieSandboxYaml:
-            "Install a proxy for the Kubernetes API Server and create the required Service Accounts:",
+            "为 Kubernetes API 服务器安装代理并创建所需的服务账户：",
         },
         second: {
-          name: "Set connection info",
+          name: "设置连接信息",
           introduction:
-            "With your cluster up and running, it should be available in the host prefilled below, and should have a Namespace created.",
+            "当集群已启动并运行时，主机地址会自动填充在下方输入框，并且应已有一个命名空间被创建。",
           disclaimer:
-            "Only change the values below if you have a custom Kubernetes installation, but beware that things might not go as expected.",
-          hostInputReason: "This information is necessary for establishing a connection with your Kubernetes cluster.",
+            "仅在自定义 Kubernetes 安装时修改以下值，但需注意结果可能与预期不符。",
+          hostInputReason: "这些信息用于建立与 Kubernetes 集群的连接。",
           namespaceInputReason:
-            "This information is necessary for creating your Dev Deployments in the correct Namespace.",
-          namespacePlaceholder: "The Namespace where you want to create your Dev Deployments.",
-          hostPlaceholder: "The Kubernetes API Server URL",
+            "这些信息用于在正确的命名空间中创建 Dev Deployments。",
+          namespacePlaceholder: "要创建 Dev Deployments 的命名空间。",
+          hostPlaceholder: "Kubernetes API 服务器 URL",
         },
         third: {
-          name: "Authenticate",
+          name: "认证",
           introduction:
-            "The Kubernetes API requires an authentication token for all requests. In this step we will get the authentication token for the Service Account we created before.",
-          getToken: "Run the command below in your terminal to get the authentication token then copy it:",
-          tokenPlaceholder: "Paste the token value here",
-          tokenInputReason: "The token is necessary to authenticate requests to the Kubernetes API Server",
+            "Kubernetes API 要求所有请求都使用认证令牌。在此步骤中，将获取之前创建的服务账户的认证令牌。",
+          getToken: "在终端中运行以下命令以获取认证令牌，然后复制结果：",
+          tokenPlaceholder: "在此粘贴令牌值",
+          tokenInputReason: "令牌用于对发送到 Kubernetes API 服务器的请求进行认证。",
         },
         final: {
-          name: "Connect",
-          connectionSuccess: "Connection successfully established.",
-          connectionError: "Connection refused.",
-          introduction: "Now you are able to create Dev Deployments on this Kubernetes instance.",
-          configNote: "The token you provide is locally stored in this browser and is never shared with anyone.",
-          connectionErrorLong: `A connection with your Kubernetes cluster could not be established.`,
-          checkInfo: "Please check the information provided and try again.",
+          name: "连接",
+          connectionSuccess: "连接已成功建立。",
+          connectionError: "连接被拒绝。",
+          introduction: "现在可以在此 Kubernetes 实例上创建 Dev Deployments。",
+          configNote: "所提供的令牌仅保存在本地浏览器中，不会与任何人共享。",
+          connectionErrorLong: `无法与 Kubernetes 集群建立连接。`,
+          checkInfo: "请检查所填信息并重试。",
           possibleErrorReasons: {
-            introduction: "Here are some possible reasons:",
-            emptyField: "One or more required information are not filled.",
-            clusterNotCreatedCorrectly: "Your Kubernetes cluster might not have been created correctly.",
-            tokenExpired: "Tokens might be expired, try creating a new one.",
+            introduction: "可能的原因包括：",
+            emptyField: "一个或多个必填信息未填写。",
+            clusterNotCreatedCorrectly: "Kubernetes 集群可能未正确创建。",
+            tokenExpired: "令牌可能已过期，请尝试重新生成。",
           },
         },
       },
     },
   },
   embedModal: {
-    title: "Embed",
+    title: "嵌入",
     description:
-      "Embed the editor and content in your page. Choose the options below and copy the embed code to your clipboard:",
-    copy: "Copy",
+      "将编辑器和内容嵌入到页面中。请选择以下选项并复制嵌入代码到剪贴板：",
+    copy: "复制",
     source: {
       current: {
-        label: "Current content",
-        description: "The embedded Editor will contain the current content, so it cannot be changed externally.",
+        label: "当前内容",
+        description: "嵌入的编辑器将包含当前内容，无法通过外部修改。",
       },
       gist: {
-        alert: `You have new changes to push. Embedding as a ${en_common.names.github} gist won't show your latest changes.`,
-        tooltip: `Only available when editing a file from a ${en_common.names.github} gist.`,
-        label: `${en_common.names.github} gist`,
+        alert: `有新的更改尚未推送。以 ${en_common.names.github} Gist 形式嵌入时不会显示最新更改。`,
+        tooltip: `仅在从 ${en_common.names.github} Gist 编辑文件时可用。`,
+        label: `${en_common.names.github} Gist`,
         description:
-          "The embedded Editor will fetch the content from the open gist. Changes made to this gist will be reflected in the Editor.",
+          "嵌入的编辑器将从打开的 Gist 获取内容对，该 Gist 的更改会在编辑器中体现。",
       },
     },
-    embedCode: "Embed code",
-    copiedToClipboard: "Copied to clipboard",
+    embedCode: "嵌入代码",
+    copiedToClipboard: "已复制到剪贴板",
   },
   connectToGitModal: {
     github: {
       header: {
         title: `${en_common.names.github} ${en_common.names.oauth} ${en_common.terms.token}`,
-        subtitle: `Set up your ${en_common.names.github} token so you can interact with GitHub.`,
+        subtitle: `设置 ${en_common.names.github} 令牌，以便与 GitHub 交互。`,
       },
       footer: {
-        createNewToken: "Generate new token",
-        placeHolder: "Paste your token here",
+        createNewToken: "生成新令牌",
+        placeHolder: "在此粘贴令牌",
       },
       body: {
-        learnMore: `Learn more about ${en_common.names.github} tokens`,
-        note: `You should provide a token with the ${"'gist'".bold()} permission.`,
+        learnMore: `了解有关 ${en_common.names.github} 令牌的更多信息`,
+        note: `应提供具有 ${"'gist'".bold()} 权限的令牌。`,
       },
       validation: {
         scopes: {
-          helper: "Your token must include the 'repo' and 'gist' scopes.",
+          helper: "令牌必须包含 'repo' 和 'gist' 权限范围。",
         },
       },
       form: {
         token: {
-          label: "Personal Access Token (classic)",
-          placeHolder: "Paste your GitHub token here",
+          label: "个人访问令牌",
+          placeHolder: "在此粘贴 GitHub 令牌",
         },
       },
     },
     bitbucket: {
       header: {
         title: `${en_common.names.bitbucket} ${en_common.names.oauth} ${en_common.terms.token}`,
-        subtitle: `Set up your ${en_common.names.bitbucket} App Password so you can interact with Bitbucket.`,
+        subtitle: `设置 ${en_common.names.bitbucket} 应用密码，以便与 Bitbucket 交互。`,
       },
       footer: {
-        createNewToken: "Generate new App Password",
-        placeHolder: "Paste your App Password here",
+        createNewToken: "生成新的应用密码",
+        placeHolder: "在此粘贴应用密码",
       },
       body: {
-        learnMore: `Learn more about ${en_common.names.bitbucket} App Passwords`,
-        note: `You should provide a token with the ${"'snippet'".bold()} permission.`,
+        learnMore: `了解有关 ${en_common.names.bitbucket} 应用密码的更多信息`,
+        note: `应提供具有 ${"'snippet'".bold()} 权限的令牌。`,
       },
       validation: {
         scopes: {
-          helper: "Your token must include the 'account', 'repository' and 'snippet' scopes.",
+          helper: "令牌必须包含 'account'、'repository' 和 'snippet' 权限范围。",
         },
       },
       form: {
         username: {
-          label: "Bitbucket username",
-          placeHolder: "Paste your Bitbucket username here",
+          label: "Bitbucket 用户名",
+          placeHolder: "在此粘贴 Bitbucket 用户名",
         },
         token: {
-          label: "Bitbucket App Password",
-          placeHolder: "Paste your Bitbucket App Password here",
+          label: "Bitbucket 应用密码",
+          placeHolder: "在此粘贴 Bitbucket 应用密码",
         },
       },
     },
+
     auth: {
-      disclaimer: `The token you provide is locally stored in this browser and is never shared with anyone.`,
+      disclaimer: `所提供的令牌仅保存在本地浏览器中，不会与任何人共享。`,
       error: {
-        alreadyLoggedIn: "You're already logged in with this Token.",
+        alreadyLoggedIn: "已使用该令牌登录。",
         oauthScopes: (requiredScopes: string) =>
-          `Make sure your Token includes the necessary OAuth2 scopes: ${requiredScopes}`,
+          `请确保令牌包含必要的 OAuth2 权限范围：${requiredScopes}`,
       },
     },
+
     navigation: {
-      continue: "Continue",
-      seeConnectedAccounts: "See connected accounts",
+      continue: "继续",
+      seeConnectedAccounts: "查看已连接的账户",
     },
     status: {
-      loading: "Loading...",
+      loading: "加载中...",
     },
-    insecurelyDisableTlsCertificateValidation: "Insecurely disable TLS certificate validation",
+    insecurelyDisableTlsCertificateValidation: "不安全地禁用 TLS 证书验证",
     insecurelyDisableTlsCertificateValidationInfo:
-      "Checking this option will insecurely disable TLS certificate verification for this account. Only check this option if you trust the Git provider and it's behind an HTTPS endpoint with a self-signed certificate. Please be advised that the use of self-signed certificates is a weaker form of security, so consider contacting your Git provider to use a trusted certificate. For more information, refer to <a href='https://cwe.mitre.org/data/definitions/295.html' target='_blank'>https://cwe.mitre.org/data/definitions/295.html</a>.",
+      "勾选此选项将不安全地禁用此账户的 TLS 证书验证。仅在信任 Git 提供方且其位于使用自签名证书的 HTTPS 端点时勾选此选项。请注意，自签名证书的安全性较弱，建议联系 Git 提供方以使用可信证书。更多信息请参考 <a href='https://cwe.mitre.org/data/definitions/295.html' target='_blank'>https://cwe.mitre.org/data/definitions/295.html</a>。",
   },
   commitModal: {
-    title: "Input custom commit message",
-    description: "Write a brief summary of the changes made to the workspace, ideally up to 72 characters.",
-    commit: "Commit",
-    emptyMessageValidation: "Commit message cannot be empty",
-    placeholder: "Commit message",
+    title: "输入自定义提交信息",
+    description: "编写对工作区更改的简要说明，不超过 36 个字符。",
+    commit: "提交",
+    emptyMessageValidation: "提交信息不能为空",
+    placeholder: "提交信息",
   },
+
   homePage: {
     uploadFile: {
-      header: "Edit existing file",
-      body: `Upload your ${en_common.names.bpmn}, ${en_common.names.dmn} or ${en_common.names.pmml} file here to start making new edits!`,
-      helperText: `Upload a .${en_common.names.bpmn}, .${en_common.names.bpmn}2, .${en_common.names.dmn} or .${en_common.names.pmml} file`,
-      helperInvalidText: "File extension is not supported",
-      placeholder: "Drag a file or browse for it.",
+      header: "编辑现有文件",
+      body: `在此上传 ${en_common.names.bpmn}、${en_common.names.dmn} 或 ${en_common.names.pmml} 文件，以开始新的编辑！`,
+      helperText: `上传 .${en_common.names.bpmn}、.${en_common.names.bpmn}2、.${en_common.names.dmn} 或 .${en_common.names.pmml} 文件`,
+      helperInvalidText: "不支持的文件扩展名",
+      placeholder: "拖拽文件到此处，或点击浏览选择。",
     },
     openUrl: {
-      validating: `Validating ${en_common.names.url}`,
-      invalidGistExtension: "File type on the provided gist is not supported.",
-      invalidExtension: `File type on the provided ${en_common.names.url} is not supported.`,
-      invalidGist: `Enter a valid gist ${en_common.names.url}. If you're using a specific gist ${en_common.names.url} remember its name can't have whitespaces and upper-case letters.`,
-      invalidUrl: `This ${en_common.names.url} is not valid (don't forget "https://"!).`,
-      notFoundUrl: `This ${en_common.names.url} does not exist.`,
-      corsNotAvailable: `This ${en_common.names.url} cannot be opened because it doesn't allow other websites to access it.`,
-      openFromSource: "Open from source",
-      description: `Paste a ${en_common.names.url} to a source code link (${en_common.names.github}, ${en_common.names.dropbox}, etc.)`,
+      validating: `正在验证 ${en_common.names.url}`,
+      invalidGistExtension: "提供的 gist 文件类型不受支持。",
+      invalidExtension: `提供的 ${en_common.names.url} 文件类型不受支持。`,
+      invalidGist: `请输入有效的 gist ${en_common.names.url}。如果使用特定 gist ${en_common.names.url}，请注意其名称不能包含空格和大写字母。`,
+      invalidUrl: `此 ${en_common.names.url} 无效（别忘了加上 "https://"！）。`,
+      notFoundUrl: `此 ${en_common.names.url} 不存在。`,
+      corsNotAvailable: `此 ${en_common.names.url} 无法打开，因为它不允许其他网站访问。`,
+      openFromSource: "从来源打开",
+      description: `粘贴一个源代码链接的 ${en_common.names.url}（${en_common.names.github}、${en_common.names.dropbox} 等）`,
     },
     dropdown: {
-      onlineForum: "Online forum",
+      onlineForum: "在线论坛",
     },
     bpmnCard: {
-      title: `Workflow (.${en_common.names.bpmn})`,
-      explanation: `${en_common.names.bpmn} files are used to generate Workflows.`,
-      createNew: "Create new workflow",
+      title: `工作流 (.${en_common.names.bpmn})`,
+      explanation: `${en_common.names.bpmn} 文件用于生成工作流。`,
+      createNew: "创建新工作流",
     },
     dmnCard: {
-      title: `Decision model (.${en_common.names.dmn})`,
-      explanation: `${en_common.names.dmn} files are used to generate decision models`,
-      createNew: "Create new decision model",
+      title: `决策模型 (.${en_common.names.dmn})`,
+      explanation: `${en_common.names.dmn} 文件用于生成决策模型。`,
+      createNew: "创建新决策模型",
     },
     pmmlCard: {
-      title: `Scorecard model (.${en_common.names.pmml})`,
-      explanation: `${en_common.names.pmml} files are used to generate scorecards`,
-      createNew: "Create new Scorecard",
+      title: `评分卡模型 (.${en_common.names.pmml})`,
+      explanation: `${en_common.names.pmml} 文件用于生成评分卡。`,
+      createNew: "创建新评分卡",
     },
-    trySample: "Try Sample",
-    chooseLocalFile: "Choose a local file",
+    trySample: "尝试示例",
+    chooseLocalFile: "选择本地文件",
   },
   alerts: {
-    gistError: `Not able to open this Gist. If you have updated your Gist filename it can take a few seconds until the URL is available to be used.`,
-    goToHomePage: "Go to Home Page",
-    errorDetails: "Error details:",
+    gistError: `无法打开此 Gist。如果已更新 Gist 文件名，URL 可能需要几秒钟才能生效。`,
+    goToHomePage: "返回主页",
+    errorDetails: "错误详情：",
     responseError: {
-      title: "An error happened while fetching your file",
+      title: "获取文件时发生错误",
     },
     fetchError: {
-      title: "An unexpected error happened while trying to fetch your file",
-      possibleCauses: "Possible causes:",
-      missingGitHubToken: `If you're trying to open a private file, make sure to set your GitHub token before. To do it use one of the Editor pages and open the "Set your GitHub token" modal under the Share dropdown.`,
-      cors: "The URL to your file must allow CORS in its response, which should contain the following header:",
+      title: "尝试获取文件时发生意外错误",
+      possibleCauses: "可能的原因：",
+      missingGitHubToken: `如果尝试打开私有文件，请先设置 GitHub 令牌。可在编辑器页面的“共享”下拉菜单中，打开“设置 GitHub 令牌”对话框完成此操作。`,
+      cors: "文件的 URL 响应必须允许 CORS，并包含以下响应头：",
     },
   },
   dmnRunner: {
     error: {
       title: `${en_common.terms.oops}!`,
-      explanation: `The ${en_common.names.dmnRunner} couldn't be rendered due to an error.`,
+      explanation: `${en_common.names.dmnRunner} 因错误无法渲染。`,
       message: [
-        `This ${en_common.names.dmn} has a construct that is not supported. Please refer to `,
+        `此 ${en_common.names.dmn} 包含不受支持的结构。请参考 `,
         wrapped("jira"),
-        " and report an issue. Don't forget to upload the current file, and the used inputs",
+        " 并报告问题。别忘了上传当前文件和所用输入。",
       ],
     },
     table: { ...en_unitables },
     modal: {
       initial: {
-        runDmnModels: "Run your models and see live forms and results as you edit.",
+        runDmnModels: "运行模型，在编辑时查看实时表单和结果。",
         explanation:
-          "Input nodes become interactive fields on an auto-generated form, and the results are displayed as easy-to-read cards.",
+          "输入节点会成为自动生成表单中的交互字段，结果会以易读的卡片形式展示。",
         notificationPanelExplanation: [
-          `The Problems panel `,
+          `编辑器右下角的“问题”面板 `,
           wrapped("icon"),
-          `, at the bottom-right corner of the Editor, displays live Execution messages to assist modeling your decisions.`,
+          ` 会实时显示评估消息，用于辅助决策建模。`,
         ],
       },
       wizard: {
         title: `${en_common.names.extendedServices} ${en_common.terms.setup}`,
-        description: `Choose your ${en_common.terms.os.full} and follow the instructions to install and start the ${en_common.names.extendedServices}.`,
+        description: `选择 ${en_common.terms.os.full}，并按照说明安装并启动 ${en_common.names.extendedServices}。`,
         outdatedAlert: {
-          title: `${en_common.names.extendedServices} is outdated!`,
-          message: `It looks like you're using an incompatible version of the ${en_common.names.extendedServices}. Follow the instructions below to update.`,
+          title: `${en_common.names.extendedServices} 已过期!`,
+          message: `检测到正在使用不兼容版本的 ${en_common.names.extendedServices}。请按照以下说明进行更新。`,
         },
         stoppedAlert: {
-          title: `${en_common.names.extendedServices} has stopped!`,
-          message: `It looks like the ${en_common.names.extendedServices} has suddenly stopped, please follow these instructions to start it again.`,
+          title: `${en_common.names.extendedServices} 已停止!`,
+          message: `检测到 ${en_common.names.extendedServices} 已意外停止，请按照以下说明重新启动。`,
         },
         macos: {
           install: {
             download: ` ${en_common.names.extendedServices}.`,
-            openFile: ["Open the ", wrapped("file"), " file."],
-            dragFileToApplicationsFolder: ["Drag ", wrapped("file"), " to the ", wrapped("folder"), " folder."],
+            openFile: ["打开 ", wrapped("file"), " 文件。"],
+            dragFileToApplicationsFolder: ["将 ", wrapped("file"), " 拖到 ", wrapped("folder"), " 文件夹。"],
           },
           start: {
             stopped: {
-              startInstruction: `If you see the ${en_common.names.extendedServices} icon on your system bar, simply click it and select "${en_common.terms.start}".`,
+              startInstruction: `如果在系统栏看到 ${en_common.names.extendedServices} 图标，只需点击并选择 "${en_common.terms.start}"。`,
               launchExtendedServices: [
-                `If not, start the ${en_common.names.extendedServices} app by launching `,
+                `否则，启动 ${en_common.names.extendedServices} 应用，方法是打开 `,
                 wrapped("file"),
-                ".",
+                "。",
               ],
             },
             firstTime: {
-              title: `If you just installed ${en_common.names.extendedServices}:`,
-              openApplicationsFolder: ["Open the ", wrapped("folder"), " folder."],
-              again: "again",
+              title: `如果刚安装了 ${en_common.names.extendedServices}:`,
+              openApplicationsFolder: ["打开 ", wrapped("folder"), " 文件夹。"],
+              again: "再次",
               openAndCancel: [
-                "Right-click on ",
+                "右键点击 ",
                 wrapped("file"),
-                ` select "${en_common.terms.open}" and then "${en_common.terms.cancel}".`,
+                `，选择 "${en_common.terms.open}"，然后选择 "${en_common.terms.cancel}"。`,
               ],
               openInstruction: [
-                "Right-click on ",
+                "右键点击 ",
                 wrapped("file"),
                 " ",
                 wrapped("again"),
-                ` and then select "${en_common.terms.open}".`,
+                `，然后选择 "${en_common.terms.open}"。`,
               ],
             },
-            alreadyRanBefore: `If you already installed and ran the ${en_common.names.extendedServices} before:`,
-            launchExtendedServices: ["Launch the ", wrapped("file")],
+            alreadyRanBefore: `如果之前已安装并运行过 ${en_common.names.extendedServices}:`,
+            launchExtendedServices: ["启动 ", wrapped("file")],
             advanced: {
-              title: "Advanced Settings",
-              runFollowingCommand: `Run the following command on a Terminal tab to start ${en_common.names.extendedServices} on a different port:`,
+              title: "高级设置",
+              runFollowingCommand: `在终端标签页运行以下命令，以在不同端口启动 ${en_common.names.extendedServices}:`,
             },
           },
         },
         windows: {
           install: {
-            keepDownload: ` ${en_common.names.extendedServices}. Note that you'll probably have to right-click the download and choose "Keep"`,
-            moveTheFile: ["Move the ", wrapped("file"), " file to your preferred folder."],
+            keepDownload: ` ${en_common.names.extendedServices}。请注意，可能需要右键点击下载并选择 "另存为"`,
+            moveTheFile: ["将 ", wrapped("file"), " 文件移动到首选文件夹。"],
           },
           start: {
             stopped: {
-              startInstruction: `If you see the ${en_common.names.extendedServices} icon on your system bar, simply click it and select "${en_common.terms.start}".`,
+              startInstruction: `如果在系统栏看到 ${en_common.names.extendedServices} 图标，只需点击并选择 "${en_common.terms.start}"。`,
               launchExtendedServices: [
-                `If not, start the ${en_common.names.extendedServices} by opening the `,
+                `否则，启动 ${en_common.names.extendedServices}，方法是打开 `,
                 wrapped("file"),
-                "file.",
+                " 文件。",
               ],
             },
             firstTime: {
-              title: `If you just installed ${en_common.names.extendedServices}:`,
-              openFolder: ["Open folder where you placed the ", wrapped("file"), " file."],
-              runAnyway: `Double-click it and select "More info" then click on the "Run anyway" button.`,
+              title: `如果刚安装了 ${en_common.names.extendedServices}:`,
+              openFolder: ["打开放置 ", wrapped("file"), " 文件的文件夹。"],
+              runAnyway: `双击文件并选择 "更多信息"，然后点击 "仍要运行" 按钮。`,
             },
-            alreadyRanBefore: `If you already installed and ran the ${en_common.names.extendedServices} before:`,
-            launchExtendedServices: ["Open the ", wrapped("file"), " file."],
+            alreadyRanBefore: `如果之前已安装并运行过 ${en_common.names.extendedServices}:`,
+            launchExtendedServices: ["打开 ", wrapped("file"), " 文件。"],
             advanced: {
-              title: "Advanced Settings",
-              runFollowingCommand: `Run the following command on the Command prompt to start ${en_common.names.extendedServices} on a different port:`,
+              title: "高级设置",
+              runFollowingCommand: `在命令提示符中运行以下命令，以在不同端口启动 ${en_common.names.extendedServices}:`,
             },
           },
         },
         linux: {
           install: {
             download: ` ${en_common.names.extendedServices}.`,
-            installAppIndicator: "Install the AppIndicator lib for your system:",
+            installAppIndicator: "为系统安装 AppIndicator 库：",
             ubuntuDependency: [`${en_common.names.ubuntu}: `, wrapped("package")],
             fedoraDependency: [`${en_common.names.fedora}: `, wrapped("package")],
-            extractContent: ["Extract the contents of ", wrapped("file"), " to your location of choice."],
+            extractContent: ["将 ", wrapped("file"), " 的内容解压到指定位置。"],
             binaryExplanation: [
-              `The ${en_common.names.extendedServices} binary, `,
+              `${en_common.names.extendedServices} 可执行文件 `,
               wrapped("file"),
-              ", is a single binary file, which means you can add it to your PATH or even configure it to execute when your computer starts.",
+              " 是一个单一的二进制文件，这意味着可以将其加入 PATH，甚至配置为开机自动执行。",
             ],
           },
           start: {
-            openTerminal: "Open a Terminal window.",
-            goToFolder: ["Go to the folder where you placed the ", wrapped("file"), " binary."],
-            runCommand: "Run ",
+            openTerminal: "打开终端窗口。",
+            goToFolder: ["进入放置 ", wrapped("file"), " 可执行文件的文件夹。"],
+            runCommand: "运行 ",
             advanced: {
-              title: "Advanced Settings",
+              title: "高级设置",
               runFollowingCommand: [
-                "Open a Terminal window and run the following command on the directory where you placed the ",
+                "打开终端窗口，并在放置 ",
                 wrapped("file"),
-                " binary:",
+                " 可执行文件的目录下运行以下命令：",
               ],
             },
           },
         },
-        footerWaitingToConnect: `Waiting to connect to ${en_common.names.extendedServices}`,
+        footerWaitingToConnect: `正在等待连接到 ${en_common.names.extendedServices}`,
         advancedSettings: {
           title: [
-            `The default ${en_common.names.extendedServices} port is `,
+            `默认的 ${en_common.names.extendedServices} 端口是 `,
             wrapped("port"),
-            `. If you're already using this port for another application, you can change the port used to connect with the ${en_common.names.extendedServices}.`,
+            `。如果该端口已被其他应用占用，可以更改用于连接 ${en_common.names.extendedServices} 的端口。`,
           ],
-          label: "Port",
-          helperTextInvalid: "Invalid port. Valid ports: 0 <= port <= 65353",
+          label: "端口",
+          helperTextInvalid: "无效的端口。有效范围: 0 <= 端口 <= 65353",
         },
       },
     },
     dropdown: {
       label: `${en_common.names.extendedServices}`,
       setup: `${en_common.terms.setup} ${en_common.names.extendedServices}`,
-      open: `${en_common.terms.open} ${en_common.names.extendedServices} panel`,
-      close: `${en_common.terms.close} ${en_common.names.extendedServices} panel`,
+      open: `${en_common.terms.open} ${en_common.names.extendedServices} 面板`,
+      close: `${en_common.terms.close} ${en_common.names.extendedServices} 面板`,
     },
     button: {
-      available: `This is only available in ${en_common.names.chrome} at the moment`,
+      available: `目前仅在 ${en_common.names.chrome} 中可用`,
     },
-  },
-  notificationsPanel: {
-    name: "Problems panel",
-    tooltip: {
-      retractAll: "Retract All",
-      expandAll: "Expand All",
-    },
-  },
-  extendedServices: {
-    dropdown: {
-      shortConnected: (port: string) => `Connected to port ${port}`,
+    notificationsPanel: {
+      name: "问题面板",
       tooltip: {
-        connected: `${en_common.names.extendedServices} is connected.`,
-        install: `Setup ${en_common.names.extendedServices} to use this feature. Click to install.`,
-        outdated: `${en_common.names.extendedServices} is outdated. Click to update.`,
-        disconnected: `${en_common.names.extendedServices} is disconnected.`,
+        retractAll: "全部收起",
+        expandAll: "全部展开",
       },
     },
-    modal: {
-      initial: {
-        subHeader: `Augment the ${en_common.names.dmn} editor`,
+    extendedServices: {
+      dropdown: {
+        shortConnected: (port: string) => `已连接到端口 ${port}`,
+        tooltip: {
+          connected: `${en_common.names.extendedServices} 已连接。`,
+          install: `请设置 ${en_common.names.extendedServices} 以使用此功能。点击安装。`,
+          outdated: `${en_common.names.extendedServices} 已过期。点击更新。`,
+          disconnected: `${en_common.names.extendedServices} 已断开连接。`,
+        },
+      },
+      modal: {
+        initial: {
+          subHeader: `拓展 ${en_common.names.dmn} 编辑器`,
+        },
+      },
+    },
+    createGitRepositoryModal: {
+      form: {
+        buttonCreate: "创建",
+        nameField: {
+          label: "名称",
+          hint: "名称无效。仅允许字母、数字、短横线 (-)、点 (.) 和下划线 (_)。",
+        },
+        visibility: {
+          public: {
+            label: "公开",
+            description: "任何人都可以在互联网上看到此仓库。由你决定谁可以提交。",
+          },
+          private: {
+            label: "私有",
+            description: "由你决定谁可以查看和提交此仓库。",
+          },
+        },
+      },
+    },
+    bitbucket: {
+      repository: `${en_common.names.bitbucket} 仓库`,
+      createRepository: `创建 ${en_common.names.bitbucket} 仓库`,
+      description: (workspace: string) =>
+        `'${workspace}' 的内容将全部放入新的 ${en_common.names.bitbucket} 仓库中。`,
+      error: {
+        formAlert: (error: string) => `创建 ${en_common.names.bitbucket} 仓库时出错。${error}`,
+      },
+      form: {
+        select: {
+          label: "选择要在其下创建新仓库的工作区。",
+          description: "可以选择个人或共享工作区。",
+        },
+      },
+    },
+    github: {
+      repository: `${en_common.names.github} 仓库`,
+      createRepository: `创建 ${en_common.names.github} 仓库`,
+      description: (workspace: string) =>
+        `'${workspace}' 的内容将全部放入新的 ${en_common.names.github} 仓库中。`,
+      error: {
+        formAlert: (error: string) => `创建 ${en_common.names.github} 仓库时出错。${error}`,
+      },
+      form: {
+        select: {
+          label: "新仓库将创建在以下范围下",
+          description: "可以选择用户账户或 GitHub 组织。",
+        },
       },
     },
   },
-  createGitRepositoryModal: {
+createGistOrSnippetModal: {
+  form: {
+    buttonCreate: "创建",
+    visibility: {
+      public: {
+        label: "公开",
+        description: "任何人都可以在互联网上看到此仓库。由你决定谁可以提交。",
+      },
+      private: {
+        label: "私有",
+        description: "由你决定谁可以查看和提交此仓库。",
+      },
+    },
+  },
+  bitbucket: {
+    gistOrSnippet: `${en_common.names.bitbucket} 代码片段`,
+    create: `创建 ${en_common.names.bitbucket} 代码片段`,
+    description: (workspace: string) =>
+      `'${workspace}' 的内容将全部放入新的 ${en_common.names.bitbucket} 代码片段中。`,
+    error: {
+      formAlert: (error: string) => `创建 ${en_common.names.bitbucket} 代码片段时出错。${error}`,
+    },
     form: {
-      buttonCreate: "Create",
-      nameField: {
-        label: "Name",
-        hint: "Invalid name. Only letters, numbers, dashes (-), dots (.), and underscores (_) are allowed.",
-      },
-      visibility: {
-        public: {
-          label: "Public",
-          description: "Anyone on the internet can see this repository. You choose who can commit.",
-        },
-        private: {
-          label: "Private",
-          description: "You choose who can see and commit to this repository.",
-        },
-      },
-    },
-    bitbucket: {
-      repository: `${en_common.names.bitbucket} repository`,
-      createRepository: `Create ${en_common.names.bitbucket} repository`,
-      description: (workspace: string) =>
-        `The contents of '${workspace}' will be all in the new ${en_common.names.bitbucket} repository.`,
-      error: {
-        formAlert: (error: string) => `Error creating ${en_common.names.bitbucket} repository. ${error}`,
-      },
-      form: {
-        select: {
-          label: "Pick a workspace under which the new repository will be created.",
-          description: "Pick either a personal or shared workspace.",
-        },
-      },
-    },
-    github: {
-      repository: `${en_common.names.github} repository`,
-      createRepository: `Create ${en_common.names.github} repository`,
-      description: (workspace: string) =>
-        `The contents of '${workspace}' will be all in the new ${en_common.names.github} repository.`,
-      error: {
-        formAlert: (error: string) => `Error creating ${en_common.names.github} repository. ${error}`,
-      },
-      form: {
-        select: {
-          label: "The new repository will be created under the following scope",
-          description: "Pick either your user account or a GitHub organization.",
-        },
+      select: {
+        label: "选择要在其下创建新代码片段的工作区。",
+        description: "可以选择个人或共享工作区。",
       },
     },
   },
-  createGistOrSnippetModal: {
+  github: {
+    gistOrSnippet: `${en_common.names.github} Gist`,
+    create: `创建 ${en_common.names.github} Gist`,
+    description: (workspace: string) =>
+      `'${workspace}' 的内容将全部放入新的 ${en_common.names.github} Gist 中。`,
+    error: {
+      formAlert: (error: string) => `创建 ${en_common.names.github} Gist 时出错。${error}`,
+    },
     form: {
-      buttonCreate: "Create",
-      visibility: {
-        public: {
-          label: "Public",
-          description: "Anyone on the internet can see this repository. You choose who can commit.",
-        },
-        private: {
-          label: "Private",
-          description: "You choose who can see and commit to this repository.",
-        },
-      },
-    },
-    bitbucket: {
-      gistOrSnippet: `${en_common.names.bitbucket} Snippet`,
-      create: `Create ${en_common.names.bitbucket} Snippet`,
-      description: (workspace: string) =>
-        `The contents of '${workspace}' will be all in the new ${en_common.names.bitbucket} Snippet.`,
-      error: {
-        formAlert: (error: string) => `Error creating ${en_common.names.bitbucket} Snippet. ${error}`,
-      },
-      form: {
-        select: {
-          label: "Pick a workspace under which the new Snippet will be created.",
-          description: "Pick either a personal or shared workspace.",
-        },
-      },
-    },
-    github: {
-      gistOrSnippet: `${en_common.names.github} Gist`,
-      create: `Create ${en_common.names.github} Gist`,
-      description: (workspace: string) =>
-        `The contents of '${workspace}' will be all in the new ${en_common.names.github} Gist.`,
-      error: {
-        formAlert: (error: string) => `Error creating ${en_common.names.github} Gist. ${error}`,
-      },
-      form: {
-        select: {
-          label: "The Gist will be created under the following user.",
-          description: "Currently GitHub does not allow to create Gists in GitHub organizations.",
-        },
+      select: {
+        label: "Gist 将创建在以下用户下。",
+        description: "目前 GitHub 不允许在组织中创建 Gist。",
       },
     },
   },
-  loadOrganizationsSelect: {
-    bitbucket: {
-      user: "Bitbucket user",
-      organizations: "Bitbucket workspaces",
-    },
-    github: {
-      user: "GitHub user",
-      organizations: "GitHub organizations",
-    },
+},
+loadOrganizationsSelect: {
+  bitbucket: {
+    user: "Bitbucket 用户",
+    organizations: "Bitbucket 工作区",
   },
-  gitStatusIndicatorActions: {
-    revert: {
-      title: "Revert",
-      warning: "This action is permanent",
-      description: "Are you sure you want to revert local changes to:",
-      confirmButtonText: "Yes, revert permanently",
-    },
-    revertAll: {
-      title: "Revert all changes",
-      warning: "This action is permanent",
-      description: "Are you sure? The following files will be reverted to the last commit:",
-      confirmButtonText: "Yes, revert permanently",
-    },
+  github: {
+    user: "GitHub 用户",
+    organizations: "GitHub 组织",
   },
+},
+gitStatusIndicatorActions: {
+  revert: {
+    title: "撤销",
+    warning: "此操作是永久性的",
+    description: "确定要撤销本地更改吗：",
+    confirmButtonText: "是，永久撤销",
+  },
+  revertAll: {
+    title: "撤销所有更改",
+    warning: "此操作是永久性的",
+    description: "确定吗？以下文件将被还原到上一次提交：",
+    confirmButtonText: "是，永久撤销",
+  },
+},
 };

@@ -27,7 +27,7 @@ import * as vscode from "vscode";
 let backendProxy: VsCodeBackendProxy;
 
 export function activate(context: vscode.ExtensionContext) {
-  console.info("Extension is alive.");
+  console.info("扩展已启动。");
 
   const backendI18n = new I18n(backendI18nDefaults, backendI18nDictionaries, vscode.env.language);
   backendProxy = new VsCodeBackendProxy(context, backendI18n);
@@ -74,7 +74,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   KogitoVsCode.VsCodeRecommendation.showExtendedServicesRecommendation(context);
 
-  console.info("Extension is successfully setup.");
+  console.info("扩展已成功设置。");
 }
 
 export function deactivate() {

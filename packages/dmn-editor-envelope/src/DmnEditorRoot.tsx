@@ -120,7 +120,7 @@ export class DmnEditorRoot extends React.Component<DmnEditorRootProps, DmnEditor
   public async getContent(): Promise<string> {
     if (!this.state.marshaller || !this.model) {
       throw new Error(
-        `DMN EDITOR ROOT: Content has not been set yet. Throwing an error to prevent returning a "default" content.`
+        `DMN编辑器根目录：内容尚未设置。抛出错误以防止返回"默认"内容。`
       );
     }
 
@@ -284,7 +284,7 @@ export class DmnEditorRoot extends React.Component<DmnEditorRootProps, DmnEditor
         model: XML2PMML(resource?.content ?? ""),
       };
     } else {
-      throw new Error(`Unknown extension '${ext}'.`);
+      throw new Error(`未知的扩展名'${ext}'。`);
     }
   };
 
@@ -311,117 +311,117 @@ export class DmnEditorRoot extends React.Component<DmnEditorRootProps, DmnEditor
     if (commands === undefined) {
       return;
     }
-    const cancelAction = this.props.keyboardShortcutsService.registerKeyPress("Escape", "Edit | Unselect", async () =>
+    const cancelAction = this.props.keyboardShortcutsService.registerKeyPress("Escape", "编辑 | 取消选择", async () =>
       commands.cancelAction()
     );
     const deleteSelectionBackspace = this.props.keyboardShortcutsService.registerKeyPress(
       "Backspace",
-      "Edit | Delete selection",
+      "编辑 | 删除选中项",
       async () => {}
     );
     const deleteSelectionDelete = this.props.keyboardShortcutsService.registerKeyPress(
       "Delete",
-      "Edit | Delete selection",
+      "编辑 | 删除选中项",
       async () => {}
     );
     const selectAll = this.props.keyboardShortcutsService?.registerKeyPress(
       "A",
-      "Edit | Select/Deselect all",
+      "编辑 | 全选/取消全选",
       async () => commands.selectAll()
     );
     const createGroup = this.props.keyboardShortcutsService?.registerKeyPress(
       "G",
-      "Edit | Create group wrapping selection",
+      "编辑 | 创建包装选中项的组",
       async () => {
-        console.log(" KEY GROUP PRESSED, ", commands);
+        console.log("组快捷键被按下，", commands);
         return commands.createGroup();
       }
     );
-    const hideFromDrd = this.props.keyboardShortcutsService?.registerKeyPress("X", "Edit | Hide from DRD", async () =>
+    const hideFromDrd = this.props.keyboardShortcutsService?.registerKeyPress("X", "编辑 | 从DRD中隐藏", async () =>
       commands.hideFromDrd()
     );
-    const copy = this.props.keyboardShortcutsService?.registerKeyPress("Ctrl+C", "Edit | Copy nodes", async () =>
+    const copy = this.props.keyboardShortcutsService?.registerKeyPress("Ctrl+C", "编辑 | 复制节点", async () =>
       commands.copy()
     );
-    const cut = this.props.keyboardShortcutsService?.registerKeyPress("Ctrl+X", "Edit | Cut nodes", async () =>
+    const cut = this.props.keyboardShortcutsService?.registerKeyPress("Ctrl+X", "编辑 | 剪切节点", async () =>
       commands.cut()
     );
-    const paste = this.props.keyboardShortcutsService?.registerKeyPress("Ctrl+V", "Edit | Paste nodes", async () =>
+    const paste = this.props.keyboardShortcutsService?.registerKeyPress("Ctrl+V", "编辑 | 粘贴节点", async () =>
       commands.paste()
     );
     const togglePropertiesPanel = this.props.keyboardShortcutsService?.registerKeyPress(
       "I",
-      "Misc | Open/Close properties panel",
+      "杂项 | 打开/关闭属性面板",
       async () => commands.togglePropertiesPanel()
     );
     const toggleHierarchyHighlight = this.props.keyboardShortcutsService?.registerKeyPress(
       "H",
-      "Misc | Toggle hierarchy highlights",
+      "杂项 | 切换层次高亮显示",
       async () => commands.toggleHierarchyHighlight()
     );
     const moveUp = this.props.keyboardShortcutsService.registerKeyPress(
       "Up",
-      "Move | Move selection up",
+      "移动 | 向上移动选中项",
       async () => {}
     );
     const moveDown = this.props.keyboardShortcutsService.registerKeyPress(
       "Down",
-      "Move | Move selection down",
+      "移动 | 向下移动选中项",
       async () => {}
     );
     const moveLeft = this.props.keyboardShortcutsService.registerKeyPress(
       "Left",
-      "Move | Move selection left",
+      "移动 | 向左移动选中项",
       async () => {}
     );
     const moveRight = this.props.keyboardShortcutsService.registerKeyPress(
       "Right",
-      "Move | Move selection right",
+      "移动 | 向右移动选中项",
       async () => {}
     );
     const bigMoveUp = this.props.keyboardShortcutsService.registerKeyPress(
       "Shift + Up",
-      "Move | Move selection up a big distance",
+      "移动 | 向上大距离移动选中项",
       async () => {}
     );
     const bigMoveDown = this.props.keyboardShortcutsService.registerKeyPress(
       "Shift + Down",
-      "Move | Move selection down a big distance",
+      "移动 | 向下大距离移动选中项",
       async () => {}
     );
     const bigMoveLeft = this.props.keyboardShortcutsService.registerKeyPress(
       "Shift + Left",
-      "Move | Move selection left a big distance",
+      "移动 | 向左大距离移动选中项",
       async () => {}
     );
     const bigMoveRight = this.props.keyboardShortcutsService.registerKeyPress(
       "Shift + Right",
-      "Move | Move selection right a big distance",
+      "移动 | 向右大距离移动选中项",
       async () => {}
     );
     const focusOnBounds = this.props.keyboardShortcutsService?.registerKeyPress(
       "B",
-      "Navigate | Focus on selection",
+      "导航 | 聚焦到选中项",
       async () => commands.focusOnSelection()
     );
     const resetPosition = this.props.keyboardShortcutsService?.registerKeyPress(
       "Space",
-      "Navigate | Reset position to origin",
+      "导航 | 重置位置到原点",
       async () => commands.resetPosition()
     );
     const pan = this.props.keyboardShortcutsService?.registerKeyPress(
       "Right Mouse Button",
-      "Navigate | Hold and drag to Pan",
+      "导航 | 按住并拖动进行平移",
       async () => {}
     );
     const zoom = this.props.keyboardShortcutsService?.registerKeyPress(
       "Ctrl",
-      "Navigate | Hold and scroll to zoom in/out",
+      "导航 | 按住并滚动进行缩放",
       async () => {}
     );
     const navigateHorizontally = this.props.keyboardShortcutsService?.registerKeyPress(
       "Shift",
-      "Navigate | Hold and scroll to navigate horizontally",
+      "导航 | 按住并滚动进行水平导航",
       async () => {}
     );
 
@@ -613,11 +613,11 @@ function ExternalModelsManager({
               // Check for multiplicity of namespaces on DMN models
               if (externalModelsIndex[namespace]) {
                 console.warn(
-                  `DMN EDITOR ROOT: Multiple DMN models encountered with the same namespace '${namespace}': '${
+                  `DMN编辑器根目录：遇到多个具有相同名称空间'${namespace}'的DMN模型：'${
                     resource.normalizedPosixPathRelativeToTheWorkspaceRoot
-                  }' and '${
+                  }'和'${
                     externalModelsIndex[namespace]!.normalizedPosixPathRelativeToTheOpenFile
-                  }'. The latter will be considered.`
+                  }'。将采用后者。`
                 );
               }
 
@@ -639,7 +639,7 @@ function ExternalModelsManager({
               };
             }
           } else {
-            throw new Error(`Unknown extension '${ext}'.`);
+            throw new Error(`未知的扩展名'${ext}'。`);
           }
         }
 
@@ -672,10 +672,10 @@ function DmnMarshallerFallbackError({ error }: { error: Error }) {
       <EmptyState style={{ maxWidth: "1280px" }}>
         <EmptyStateIcon icon={() => <div style={{ fontSize: "3em" }}>😕</div>} />
         <Title size={"lg"} headingLevel={"h4"}>
-          Unable to open file.
+          无法打开文件。
         </Title>
         <br />
-        <EmptyStateBody>Error details: {error.message}</EmptyStateBody>
+        <EmptyStateBody>错误详情：{error.message}</EmptyStateBody>
       </EmptyState>
     </Flex>
   );

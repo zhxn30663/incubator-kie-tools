@@ -62,7 +62,7 @@ export const OutputsHandler = (props: OutputsHandlerProps) => {
     <Split hasGutter={true}>
       <SplitItem isFilled={true}>
         <Title headingLevel="h1" size={TitleSizes["2xl"]}>
-          Outputs
+          输出
         </Title>
       </SplitItem>
       <SplitItem>
@@ -77,7 +77,7 @@ export const OutputsHandler = (props: OutputsHandlerProps) => {
     <>
       {validations.length === 0 && (
         <Button variant="secondary" onClick={toggleModal} data-title="Outputs">
-          Set Outputs
+          设置输出
         </Button>
       )}
       {validations.length > 0 && (
@@ -88,7 +88,7 @@ export const OutputsHandler = (props: OutputsHandlerProps) => {
             onClick={toggleModal}
             data-title="Outputs"
           >
-            Set Outputs
+            设置输出
           </Button>
         </ValidationIndicatorTooltip>
       )}

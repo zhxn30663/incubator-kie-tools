@@ -33,7 +33,7 @@ interface ModelTitleProps {
   commitModelName?: (_modelName: string) => void;
 }
 
-export const MODEL_NAME_NOT_SET = "<Model Name not set>";
+export const MODEL_NAME_NOT_SET = "<未设置模型名称>";
 
 export const ModelTitle = (props: ModelTitleProps) => {
   const { modelName, commitModelName } = props;
@@ -110,9 +110,9 @@ export const ModelTitle = (props: ModelTitleProps) => {
         >
           <Split hasGutter={true} className={"modelTitle--hide-overflow"}>
             <SplitItem className="modelTitle__icon">
-              <Tooltip content={"The Model Name will be generated at runtime if not set."}>
+              <Tooltip content={"如果未设置，模型名称将在运行时生成。"}>
                 <button
-                  aria-label="More info about Model Name"
+                  aria-label="关于模型名称的更多信息"
                   onClick={(e) => e.preventDefault()}
                   className="pf-c-form__group-label-help modelTitle__icon"
                 >

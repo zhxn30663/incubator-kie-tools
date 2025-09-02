@@ -66,7 +66,7 @@ const DataDictionaryPropertiesEdit = (props: DataDictionaryPropertiesEditProps) 
 
   const constraintAlert = useMemo(() => {
     if (dataType.optype === "continuous" && dataType.isCyclic && dataType.constraints === undefined) {
-      return "Interval or Value constraints are required for cyclic continuous data types";
+      return "循环连续数据类型需要区间或值约束";
     }
     if (
       dataType.isCyclic &&
@@ -74,7 +74,7 @@ const DataDictionaryPropertiesEdit = (props: DataDictionaryPropertiesEditProps) 
       dataType.constraints?.type === ConstraintType.RANGE &&
       dataType.constraints.value?.length > 1
     ) {
-      return "Cyclic continuous data types can only have a single interval constraint";
+      return "循环连续数据类型只能有一个区间约束";
     }
   }, [dataType]);
 
@@ -85,7 +85,7 @@ const DataDictionaryPropertiesEdit = (props: DataDictionaryPropertiesEditProps) 
           <Button variant="link" isInline={true} onClick={onClose}>
             {dataType.name}
           </Button>
-          &nbsp;/&nbsp;Properties
+          &nbsp;/&nbsp;属性
         </Title>
       </StackItem>
       <StackItem
@@ -100,15 +100,15 @@ const DataDictionaryPropertiesEdit = (props: DataDictionaryPropertiesEditProps) 
                 <StackItem>
                   <FormGroup
                     className="data-dictionary__properties-edit__field"
-                    label="Display Name"
+                    label="显示名称"
                     fieldId="display-name"
-                    helperText="Display Name to use instead of the data type name"
+                    helperText="用于替代数据类型名称的显示名称"
                   >
                     <TextInput
                       type="text"
                       id="display-name"
                       name="display-name"
-                      aria-describedby="Display Name"
+                      aria-describedby="显示名称"
                       value={displayName}
                       onChange={(value) => setDisplayName(value)}
                       autoComplete="off"
@@ -124,14 +124,14 @@ const DataDictionaryPropertiesEdit = (props: DataDictionaryPropertiesEditProps) 
                 <StackItem>
                   <FormGroup
                     className="data-dictionary__properties-edit__field"
-                    label="Cyclic Type"
+                    label="循环类型"
                     fieldId="is-cyclic"
                     isInline={true}
                     labelIcon={
                       dataType.optype === "categorical" ? (
-                        <Tooltip content={"Categorical fields cannot be cyclic"}>
+                        <Tooltip content={"分类字段不能是循环的"}>
                           <button
-                            aria-label="More info for Cyclic Type"
+                            aria-label="循环类型的更多信息"
                             onClick={(e) => e.preventDefault()}
                             className="pf-c-form__group-label-help"
                           >
@@ -149,7 +149,7 @@ const DataDictionaryPropertiesEdit = (props: DataDictionaryPropertiesEditProps) 
                       onChange={() => {
                         saveCyclicProperty(true);
                       }}
-                      label="Yes"
+                      label="是"
                       id="isCyclic"
                       value="isCyclic"
                       isDisabled={isOptypeDisabled}
@@ -160,7 +160,7 @@ const DataDictionaryPropertiesEdit = (props: DataDictionaryPropertiesEditProps) 
                       onChange={() => {
                         saveCyclicProperty(false);
                       }}
-                      label="No"
+                      label="否"
                       id="isNotCyclic"
                       value="isNotCyclic"
                       isDisabled={isOptypeDisabled}
@@ -171,7 +171,7 @@ const DataDictionaryPropertiesEdit = (props: DataDictionaryPropertiesEditProps) 
                       onChange={() => {
                         saveCyclicProperty(undefined);
                       }}
-                      label="Not Set"
+                      label="未设置"
                       id="cyclicNotSet"
                       value="cyclicNotSet"
                       isDisabled={isOptypeDisabled}
@@ -181,15 +181,15 @@ const DataDictionaryPropertiesEdit = (props: DataDictionaryPropertiesEditProps) 
                 <StackItem>
                   <FormGroup
                     className="data-dictionary__properties-edit__field"
-                    label="Missing Value"
+                    label="缺失值"
                     fieldId="missing-value"
-                    helperText="Value for when the input is missing"
+                    helperText="输入缺失时的值"
                   >
                     <TextInput
                       type="text"
                       id="missing-value"
                       name="missing-value"
-                      aria-describedby="Missing Value"
+                      aria-describedby="缺失值"
                       value={missingValue}
                       onChange={(value) => setMissingValue(value)}
                       autoComplete="off"
@@ -205,15 +205,15 @@ const DataDictionaryPropertiesEdit = (props: DataDictionaryPropertiesEditProps) 
                 <StackItem>
                   <FormGroup
                     className="data-dictionary__properties-edit__field"
-                    label="Invalid Value"
+                    label="无效值"
                     fieldId="missing-value"
-                    helperText="Value for when the input is invalid"
+                    helperText="输入无效时的值"
                   >
                     <TextInput
                       type="text"
                       id="invalid-value"
                       name="invalid-value"
-                      aria-describedby="Invalid Value"
+                      aria-describedby="无效值"
                       value={invalidValue}
                       onChange={(value) => setInvalidValue(value)}
                       autoComplete="off"
@@ -252,7 +252,7 @@ const DataDictionaryPropertiesEdit = (props: DataDictionaryPropertiesEditProps) 
           iconPosition="left"
           ouiaId="back-to-DFs"
         >
-          Back
+          返回
         </Button>
       </StackItem>
     </Stack>

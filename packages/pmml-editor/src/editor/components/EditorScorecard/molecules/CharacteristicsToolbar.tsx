@@ -44,7 +44,7 @@ export const CharacteristicsToolbar = (props: CharacteristicsToolbarProps) => {
           <SplitItem>
             <TextContent>
               <Title size="lg" headingLevel="h1">
-                Characteristics
+                特征
               </Title>
             </TextContent>
           </SplitItem>
@@ -60,7 +60,7 @@ export const CharacteristicsToolbar = (props: CharacteristicsToolbarProps) => {
                       data-testid="characteristics-toolbar__characteristics-filter"
                       type="search"
                       aria-label="filter characteristics"
-                      placeholder="Filter by name"
+                      placeholder="按名称筛选"
                       value={filter}
                       onChange={(e) => setFilter(e)}
                     />
@@ -88,7 +88,7 @@ export const CharacteristicsToolbar = (props: CharacteristicsToolbarProps) => {
                 onClick={() => onAddCharacteristic()}
                 ouiaId="add-characteristic"
               >
-                Add Characteristic
+                添加特征
               </Button>
             </ToolbarItem>
           </SplitItem>

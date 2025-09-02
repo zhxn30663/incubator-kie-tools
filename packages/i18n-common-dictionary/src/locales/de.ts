@@ -1,85 +1,68 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- *  http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-
 import { CommonI18n } from "../CommonI18n";
 import { names } from "../names";
 
 export const de: CommonI18n = {
   names,
   terms: {
-    apply: "Anwenden",
-    available: "Verfügbar",
-    back: "Zurück",
-    cancel: "Abbrechen",
-    change: "Ändern",
-    close: "Schließen",
-    copy: "Kopieren",
-    configure: "Konfigurieren",
-    confirm: "Bestätigen",
-    connected: "Verbunden",
-    continue: "Fortfahren",
-    cut: "Ausschneiden",
-    deploy: "Bereitstellen",
-    disconnected: "Getrennt",
-    dismiss: "Ablehnen",
-    done: "Fertig",
-    download: "Download",
-    edit: "Bearbeiten",
-    edited: "Editiert",
-    execution: "Ausführung",
-    exit: "Beenden",
-    file: "Datei",
-    files: "Dateien",
-    forum: "Forum",
-    fullScreen: "Vollbild",
-    host: "Host",
-    install: "Installieren",
-    inputs: "Eingänge",
-    launch: "Starten",
-    loading: "Laden",
-    macosApplicationFolder: "Programm",
-    namespace: "Namespace (project)",
-    new: "Neu",
-    next: "Nächste",
-    note: "Anmerkung",
-    open: "Öffnen",
-    oops: "Oops",
-    os: {
-      initials: "OS",
-      full: "Betriebssystem",
-    },
-    outputs: "Ausgänge",
-    paste: "Einfügen",
-    poweredBy: "Powered by",
-    quit: "Beenden",
-    readonly: "Schreibgeschützt",
-    redo: "Wiederholen",
-    reset: "Zurücksetzen",
-    run: "Ausführen",
-    save: "Speichern",
-    selection: "Auswahl",
-    setup: "Einrichtung",
-    start: "Start",
-    token: "Token",
-    undo: "Rückgängig",
-    uninstall: "Deinstallieren",
-    username: "Username",
-    validation: "Validierung",
+    apply: "应用",
+    available: "可用",
+    back: "后退",
+    cancel: "取消",
+    change: "更改",
+    close: "关闭",
+    copy: "复制",
+    configure: "配置",
+    confirm: "确认",
+    connected: "已连接",
+    continue: "继续",
+    cut: "剪切",
+    deploy: "部署",
+    disconnected: "断开连接",
+    dismiss: "忽略",
+    done: "完成",
+  download: "下载",
+edit: "编辑",
+edited: "已编辑",
+execution: "执行",
+exit: "退出",
+file: "文件",
+files: "文件",
+forum: "论坛",
+fullScreen: "全屏",
+host: "主机",
+install: "安装",
+inputs: "输入",
+launch: "启动",
+loading: "加载中",
+macosApplicationFolder: "应用程序",
+namespace: "命名空间（项目）",
+new: "新建",
+next: "下一步",
+note: "备注",
+open: "打开",
+oops: "哎呀",
+os: {
+  initials: "操作系统",
+  full: "操作系统",
+},
+outputs: "输出",
+paste: "粘贴",
+poweredBy: "技术支持",
+quit: "退出",
+readonly: "只读",
+redo: "重做",
+reset: "重置",
+run: "运行",
+save: "保存",
+selection: "选择",
+setup: "设置",
+start: "开始",
+token: "令牌",
+undo: "撤销",
+uninstall: "卸载",
+username: "用户名",
+validation: "校验",
+
+
   },
 };

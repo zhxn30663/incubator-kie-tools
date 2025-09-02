@@ -44,5 +44,5 @@ export function isValidK8sResource(content: any): content is K8sResourceYaml {
 }
 
 export function consoleDebugMessage(message: any) {
-  console.debug("K8S YAML TO APISERVER:", message);
+  console.debug("K8S YAML转API服务器：", message);
 }

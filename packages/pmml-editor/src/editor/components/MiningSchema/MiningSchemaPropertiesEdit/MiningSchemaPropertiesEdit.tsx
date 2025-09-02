@@ -204,7 +204,7 @@ const MiningSchemaPropertiesEdit = ({
           <Button variant="link" isInline={true} onClick={onClose}>
             {field.name}
           </Button>
-          &nbsp;/&nbsp;Properties
+          &nbsp;/&nbsp;属性
         </Title>
       </StackItem>
       <StackItem>
@@ -216,7 +216,7 @@ const MiningSchemaPropertiesEdit = ({
                   <SplitItem>
                     <FormGroup
                       className="mining-schema__properties__field"
-                      label="Field Usage Type"
+                      label="字段使用类型"
                       fieldId="usageType"
                     >
                       <GenericSelector
@@ -243,7 +243,7 @@ const MiningSchemaPropertiesEdit = ({
                     </FormGroup>
                   </SplitItem>
                   <SplitItem>
-                    <FormGroup className="mining-schema__properties__field" label="Field Op Type" fieldId="opType">
+                    <FormGroup className="mining-schema__properties__field" label="字段操作类型" fieldId="opType">
                       <GenericSelector
                         id="opType"
                         items={["", "categorical", "ordinal", "continuous"]}
@@ -260,7 +260,7 @@ const MiningSchemaPropertiesEdit = ({
               <StackItem>
                 <FormGroup
                   className="mining-schema__properties__field"
-                  label="Importance"
+                  label="重要性"
                   fieldId="importance"
                   helperText={validationsImportance.length === 0 ? "" : validationsImportance[0].message}
                   validated={validationsImportance.length === 0 ? "default" : "warning"}
@@ -508,7 +508,7 @@ const MiningSchemaPropertiesEdit = ({
             iconPosition="left"
             ouiaId="back-to-ms-overview"
           >
-            Back
+            返回
           </Button>
         </section>
       </StackItem>

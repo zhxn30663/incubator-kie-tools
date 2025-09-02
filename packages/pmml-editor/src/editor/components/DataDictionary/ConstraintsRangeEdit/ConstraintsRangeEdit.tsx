@@ -66,7 +66,7 @@ const ConstraintsRangeEdit = (props: ConstraintsRangeEditProps) => {
       <StackItem>
         <TextContent>
           <Text component={TextVariants.small}>
-            At least the Start Value or End Value is required for each interval
+            每个区间至少需要起始值或结束值
           </Text>
         </TextContent>
       </StackItem>
@@ -93,7 +93,7 @@ const ConstraintsRangeEdit = (props: ConstraintsRangeEditProps) => {
           isSmall={true}
           ouiaId="add-another-interval"
         >
-          Add another interval
+          添加其他区间
         </Button>
       </StackItem>
     </Stack>
@@ -177,9 +177,9 @@ const RangeEdit = (props: RangeEditProps) => {
       <Split hasGutter={true} className="constraints__range-item">
         <SplitItem isFilled={true}>
           <FormGroup
-            label="Start Value"
+            label="起始值"
             fieldId={`start-value-${index}`}
-            helperText={validations[0] ? "Please enter start and/or end value" : ""}
+            helperText={validations[0] ? "请输入起始值和/或结束值" : ""}
           >
             <TextInput
               type="number"
@@ -196,8 +196,8 @@ const RangeEdit = (props: RangeEditProps) => {
           </FormGroup>
           <FormGroup fieldId={`start-included-${index}`} className="constraints__include-range">
             <Checkbox
-              label="Include Start Value"
-              aria-label="Include Start Value"
+              label="包含起始值"
+              aria-label="包含起始值"
               id={`start-included-${index}`}
               name="start-included"
               isChecked={rangeValues.start.included}
@@ -210,9 +210,9 @@ const RangeEdit = (props: RangeEditProps) => {
         </SplitItem>
         <SplitItem isFilled={true}>
           <FormGroup
-            label="End Value"
+            label="结束值"
             fieldId={`end-value-${index}`}
-            helperText={validations[0] ? "Please enter start and/or end value" : ""}
+            helperText={validations[0] ? "请输入起始值和/或结束值" : ""}
           >
             <TextInput
               type="number"
@@ -229,8 +229,8 @@ const RangeEdit = (props: RangeEditProps) => {
           </FormGroup>
           <FormGroup fieldId={`end-included-${index}`} className="constraints__include-range">
             <Checkbox
-              label="Include End Value"
-              aria-label="Include End Value"
+              label="包含结束值"
+              aria-label="包含结束值"
               id={`end-included-${index}`}
               name="end-included"
               isChecked={rangeValues.end.included}
@@ -250,7 +250,7 @@ const RangeEdit = (props: RangeEditProps) => {
             <FlexItem>
               <Button
                 variant="plain"
-                aria-label="Delete Range"
+                aria-label="删除区间"
                 onClick={handleDelete}
                 isDisabled={rangesCount === 1}
                 tabIndex={(index + 1) * 10 + 5}

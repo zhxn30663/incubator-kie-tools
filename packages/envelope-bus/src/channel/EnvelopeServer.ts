@@ -88,7 +88,7 @@ export class EnvelopeServer<
 
       this.initPollingTimeout = setTimeout(() => {
         this.stopInitPolling();
-        console.info("Init polling timed out. Looks like the Envelope is not responding accordingly.");
+        console.info("初始化轮询超时。看起来信封没有相应响应。");
       }, EnvelopeServer.INIT_POLLING_TIMEOUT_IN_MS);
     }, EnvelopeServer.INIT_POLLING_INTERVAL_IN_MS);
   }

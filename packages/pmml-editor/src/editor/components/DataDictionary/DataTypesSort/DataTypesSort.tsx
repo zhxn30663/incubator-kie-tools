@@ -75,7 +75,7 @@ const SortableItem = SortableElement(({ item }: { item: DDDataField }) => (
     <section className="editable-item__inner" data-ouia-component-id={item.name}>
       <Flex alignItems={{ default: "alignItemsCenter" }}>
         <FlexItem spacer={{ default: "spacerXs" }}>
-          <Button variant="plain" aria-label="Drag to sort" component={"span"} ouiaId="drag-it">
+          <Button variant="plain" aria-label="拖动排序" component={"span"} ouiaId="drag-it">
             <GripVerticalIcon />
           </Button>
         </FlexItem>

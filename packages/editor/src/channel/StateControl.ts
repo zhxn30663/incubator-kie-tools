@@ -44,7 +44,7 @@ export class StateControl {
     if (index > -1) {
       this.registeredCallbacks.splice(index, 1);
     } else {
-      console.error("Can't unsubscribe callback because it wasn't subscribed.");
+      console.error("无法取消订阅回调，因为它未被订阅。");
     }
   }
 

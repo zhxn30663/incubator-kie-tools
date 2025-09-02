@@ -49,7 +49,7 @@ export const LandingPageToolbar = (props: LandingPageToolbarProps) => {
                   data-testid="landing-page-toolbar__model-filter"
                   type="search"
                   aria-label="filter models"
-                  placeholder="Filter models by name"
+                  placeholder="按名称筛选模型"
                   onChange={(e) => setFilter(e)}
                 />
                 <Button
@@ -71,7 +71,7 @@ export const LandingPageToolbar = (props: LandingPageToolbarProps) => {
             <Switch
               id="only-supported-models-switch"
               data-testid="landing-page-toolbar__supported-models"
-              label="Show unsupported models"
+              label="显示不支持的模型"
               isChecked={showUnsupportedModels}
               onChange={onShowUnsupportedModels}
             />

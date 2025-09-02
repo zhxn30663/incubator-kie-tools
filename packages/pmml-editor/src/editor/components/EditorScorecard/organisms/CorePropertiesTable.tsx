@@ -173,7 +173,7 @@ export const CorePropertiesTable = (props: CorePropertiesTableProps) => {
                 <Split hasGutter={true}>
                   <SplitItem>
                     <Title size="lg" headingLevel="h1">
-                      Model Setup
+                      模型设置
                     </Title>
                   </SplitItem>
                   <SplitItem>
@@ -216,7 +216,7 @@ export const CorePropertiesTable = (props: CorePropertiesTableProps) => {
                 <Split hasGutter={true}>
                   <SplitItem>
                     <Title size="lg" headingLevel="h1">
-                      Model Setup
+                      模型设置
                     </Title>
                   </SplitItem>
                 </Split>
@@ -231,7 +231,7 @@ export const CorePropertiesTable = (props: CorePropertiesTableProps) => {
                 >
                   <Level hasGutter={true}>
                     <LevelItem>
-                      <FormGroup label="Is Scorable" fieldId="core-isScorable">
+                      <FormGroup label="是否可评分" fieldId="core-isScorable">
                         <Switch
                           id="core-isScorable"
                           isChecked={isScorable === true}
@@ -246,7 +246,7 @@ export const CorePropertiesTable = (props: CorePropertiesTableProps) => {
                       </FormGroup>
                     </LevelItem>
                     <LevelItem>
-                      <FormGroup label="Function" fieldId="core-functionName" required={true}>
+                      <FormGroup label="函数" fieldId="core-functionName" required={true}>
                         {GenericSelectorEditor(
                           "core-functionName",
                           [
@@ -270,7 +270,7 @@ export const CorePropertiesTable = (props: CorePropertiesTableProps) => {
                       </FormGroup>
                     </LevelItem>
                     <LevelItem>
-                      <FormGroup label="Algorithm" fieldId="core-algorithmName">
+                      <FormGroup label="算法" fieldId="core-algorithmName">
                         <TextInput
                           type="text"
                           id="core-algorithmName"

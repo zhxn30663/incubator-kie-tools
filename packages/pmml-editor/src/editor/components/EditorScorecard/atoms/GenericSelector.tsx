@@ -49,7 +49,7 @@ export const GenericSelector = (props: GenericSelectorProps) => {
       id={props.id}
       className="generic-selector ignore-onclickoutside"
       variant={SelectVariant.single}
-      aria-label="Select"
+      aria-label="选择"
       onToggle={onToggle}
       onSelect={onSelect}
       selections={props.selection}

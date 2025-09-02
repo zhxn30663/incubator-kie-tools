@@ -205,10 +205,10 @@ export const CharacteristicsTableEditRow = (props: CharacteristicsTableEditRowPr
           <Split hasGutter={true}>
             <SplitItem>
               <FormGroup
-                label="Name"
+                label="名称"
                 isRequired={true}
                 fieldId="characteristic-form-name-helper"
-                helperTextInvalid="Name is mandatory and must be unique"
+                helperTextInvalid="名称是必填的，且必须唯一"
                 helperTextInvalidIcon={<ExclamationCircleIcon />}
                 validated={name.valid ? "default" : "error"}
                 style={{ width: "18em" }}
@@ -219,7 +219,7 @@ export const CharacteristicsTableEditRow = (props: CharacteristicsTableEditRowPr
                   name="characteristic-name"
                   aria-describedby="characteristic-name-helper"
                   value={name.value ?? ""}
-                  placeholder="Name"
+                  placeholder="名称"
                   validated={name.valid ? "default" : "error"}
                   autoFocus={true}
                   onChange={(e) =>
@@ -339,7 +339,7 @@ export const CharacteristicsTableEditRow = (props: CharacteristicsTableEditRowPr
 
             <SplitItem>
               <Button id="add-attribute-button" variant="primary" onClick={onAddAttribute} ouiaId="add-attribute">
-                Add Attribute
+                添加属性
               </Button>
             </SplitItem>
           </Split>

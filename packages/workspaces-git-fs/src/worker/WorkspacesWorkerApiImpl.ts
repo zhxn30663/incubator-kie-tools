@@ -185,7 +185,7 @@ export class WorkspacesWorkerApiImpl implements WorkspacesWorkerApi {
         // "text" is the default
         return new ResourceContent(args.relativePath, decoder.decode(file.content), ContentType.TEXT);
       } catch (e) {
-        console.error(e);
+        console.error("读取文件内容时出错：", e);
         throw e;
       }
     });
@@ -517,7 +517,7 @@ export class WorkspacesWorkerApiImpl implements WorkspacesWorkerApi {
     gitAuthSessionId: string | undefined;
     insecurelyDisableTlsCertificateValidation?: boolean;
   }): Promise<{ workspace: WorkspaceDescriptor; suggestedFirstFile?: WorkspaceWorkerFileDescriptor }> {
-    console.log(args);
+    console.log("参数：", args);
     return this.createWorkspace({
       preferredName: new URL(args.origin.url).pathname.substring(1), // Remove slash
       origin: args.origin,

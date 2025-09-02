@@ -245,11 +245,11 @@ export class EnvelopeBusMessageManager<
     error?: any
   ): void {
     if (request.purpose !== EnvelopeBusMessagePurpose.REQUEST) {
-      throw new Error("Cannot respond a message that is not a request");
+      throw new Error("无法响应非请求消息");
     }
 
     if (!request.requestId) {
-      throw new Error("Cannot respond a request without a requestId");
+      throw new Error("无法响应没有requestId的请求");
     }
 
     this.send({
@@ -263,15 +263,15 @@ export class EnvelopeBusMessageManager<
 
   private callback(response: EnvelopeBusMessage<unknown, FunctionPropertyNames<ApiToConsume>>) {
     if (response.purpose !== EnvelopeBusMessagePurpose.RESPONSE) {
-      throw new Error("Cannot invoke callback with a message that is not a response");
+      throw new Error("无法使用非响应消息调用回调");
     }
     if (!response.requestId) {
-      throw new Error("Cannot acknowledge a response without a requestId");
+      throw new Error("无法确认没有requestId的响应");
     }
 
     const callback = this.requestHandlers.get(response.requestId);
     if (!callback) {
-      throw new Error("Callback not found for " + response);
+      throw new Error("未找到回调：" + response);
     }
 
     this.requestHandlers.delete(response.requestId);
@@ -306,7 +306,7 @@ export class EnvelopeBusMessageManager<
         if (api !== undefined) {
           response = api.apply(apiImpl, request.data);
         } else {
-          console.warn(`API '${String(request.type)}' was not found. Request will be ignored.`);
+          console.warn(`API '${String(request.type)}' 未找到。请求将被忽略。`);
           return;
         }
       } catch (err) {
@@ -316,7 +316,7 @@ export class EnvelopeBusMessageManager<
       }
 
       if (!(response instanceof Promise)) {
-        throw new Error(`Cannot make a request to '${String(request.type)}' because it does not return a Promise`);
+        throw new Error(`无法向'${String(request.type)}'发送请求，因为它不返回Promise`);
       }
 
       response

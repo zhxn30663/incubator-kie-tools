@@ -101,7 +101,7 @@ export class DefaultKeyboardShortcutsService implements KeyboardShortcutsService
     onKeyUp: (target: EventTarget | null) => Promise<void>,
     opts?: KeyboardShortcutRegisterOpts
   ) {
-    console.debug(`Registering shortcut (down/up) for ${combination} - ${label}: ${opts?.repeat}`);
+    console.debug(`注册快捷键 (按下/释放) ${combination} - ${label}: ${opts?.repeat}`);
 
     const keyBinding = {
       combination,
@@ -114,7 +114,7 @@ export class DefaultKeyboardShortcutsService implements KeyboardShortcutsService
 
         if (keyboardEvent.type === "keydown") {
           if (setsEqual(this.combinationKeySet(combination), this.pressedKeySet(keyboardEvent))) {
-            console.debug(`Fired (down) [${combination}]!`);
+            console.debug(`触发 (按下) [${combination}]!`);
             onKeyDown(keyboardEvent.target);
             return false;
           }
@@ -123,7 +123,7 @@ export class DefaultKeyboardShortcutsService implements KeyboardShortcutsService
             this.combinationKeySet(combination).has(MODIFIER_KEY_NAMES.get(keyboardEvent.code) ?? "") ||
             this.combinationKeySet(combination).has(keyboardEvent.code)
           ) {
-            console.debug(`Fired (up) [${combination}]!`);
+            console.debug(`触发 (释放) [${combination}]!`);
             onKeyUp(keyboardEvent.target);
             return false;
           }
@@ -148,7 +148,7 @@ export class DefaultKeyboardShortcutsService implements KeyboardShortcutsService
     onKeyPress: (target: EventTarget | null) => Promise<void>,
     opts?: KeyboardShortcutRegisterOpts
   ) {
-    console.debug(`Registering shortcut (press) for ${combination} - ${label}: ${opts?.repeat}`);
+    console.debug(`注册快捷键 (按下) ${combination} - ${label}: ${opts?.repeat}`);
 
     const keyBinding = {
       combination,
@@ -160,7 +160,7 @@ export class DefaultKeyboardShortcutsService implements KeyboardShortcutsService
         }
 
         if (setsEqual(this.combinationKeySet(combination), this.pressedKeySet(keyboardEvent))) {
-          console.debug(`Fired (press) [${combination}]!`);
+          console.debug(`触发 (按下) [${combination}]!`);
           onKeyPress(keyboardEvent.target);
           return false;
         }
@@ -198,7 +198,7 @@ export class DefaultKeyboardShortcutsService implements KeyboardShortcutsService
   public deregister(id: number): void {
     const keyBinding = this.keyBindings.get(id);
     if (!keyBinding) {
-      console.error(`Unable to de-register keyboard shortcut with id ${id} because it was not registered.`);
+      console.error(`无法注销ID为${id}的键盘快捷键，因为它未被注册。`);
       return;
     }
 
@@ -260,13 +260,13 @@ function getProcessableKeyboardEvent(
   opts?: KeyboardShortcutRegisterOpts
 ): KeyboardEvent | null {
   if (event instanceof CustomEvent && IGNORED_TAGS.includes(event.detail.channelOriginalTargetTagName!)) {
-    console.debug(`Ignoring execution (${combination}) because target is ${event.detail.channelOriginalTargetTagName}`);
+    console.debug(`忽略执行 (${combination})，因为目标是 ${event.detail.channelOriginalTargetTagName}`);
     return null;
   }
 
   const keyboardEvent = event instanceof CustomEvent ? new KeyboardEvent(event.detail.type, event.detail) : event;
   if (keyboardEvent.target instanceof Element && IGNORED_TAGS.includes(keyboardEvent.target.tagName)) {
-    console.debug(`Ignoring execution (${combination}) because target is ${keyboardEvent.target.tagName}`);
+    console.debug(`忽略执行 (${combination})，因为目标是 ${keyboardEvent.target.tagName}`);
     return null;
   }
 

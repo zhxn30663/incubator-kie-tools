@@ -31,7 +31,7 @@ export class KnativeSupportService {
 
       return knService.status?.url;
     } catch (e) {
-      throw new Error(`Failed to get deployment route for resource ${resourceName}`);
+      throw new Error(`获取资源${resourceName}的部署路由失败`);
     }
   }
 }

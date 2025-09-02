@@ -33,7 +33,7 @@ export async function callK8sApiServer(args: {
       ?.get(yamlDocument.apiVersion ?? "v1");
     if (!rawEndpoints) {
       throw new Error(
-        `Can't create '${yamlDocument.kind}' because there's no matching API for it registered on '${args.k8sApiServerUrl}'`
+        `无法创建'${yamlDocument.kind}'，因为在'${args.k8sApiServerUrl}'上没有为其注册匹配的API`
       );
     }
 
@@ -45,11 +45,11 @@ export async function callK8sApiServer(args: {
       rawEndpoint: rawEndpoint,
     };
   });
-  consoleDebugMessage("Done.");
+  consoleDebugMessage("完成。");
   consoleDebugMessage("");
 
   // Simulate actual API calls
-  consoleDebugMessage("Start calling API endpoints for each parsed YAML...");
+  consoleDebugMessage("开始为每个解析的YAML调用API端点...");
 
   const results = [];
   for (const apiCall of apiCalls) {
@@ -60,7 +60,7 @@ export async function callK8sApiServer(args: {
     );
     endpointUrl.pathname = interpolatedPathname;
 
-    consoleDebugMessage(`Creating '${apiCall.kind}' with POST ${endpointUrl.toString()}`);
+    consoleDebugMessage(`使用POST ${endpointUrl.toString()}创建'${apiCall.kind}'`);
     results.push(
       await fetch(endpointUrl.toString(), {
         headers: {
@@ -72,7 +72,7 @@ export async function callK8sApiServer(args: {
       }).then((response) => response.json())
     );
   }
-  consoleDebugMessage("Done.");
+  consoleDebugMessage("完成。");
 
   return results;
 }

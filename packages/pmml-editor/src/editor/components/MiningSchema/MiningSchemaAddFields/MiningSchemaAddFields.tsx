@@ -100,7 +100,7 @@ const MiningSchemaAddFields = ({ options, onAdd, isDisabled }: MiningSchemaAddFi
             selections={selected}
             isOpen={isOpen}
             aria-labelledby={"Select fields to add"}
-            placeholderText="Select fields"
+            placeholderText="选择字段"
             isDisabled={isDisabled}
             ouiaId="select-mining-field"
           >
@@ -117,12 +117,12 @@ const MiningSchemaAddFields = ({ options, onAdd, isDisabled }: MiningSchemaAddFi
         </SplitItem>
         <SplitItem>
           <Button variant="primary" onClick={handleAdd} isDisabled={isDisabled} ouiaId="add-mining-field">
-            Add Field(s)
+            添加字段
           </Button>
         </SplitItem>
         <SplitItem>
           <Button variant="secondary" onClick={addAllFields} isDisabled={isDisabled} ouiaId="add-all-fields">
-            Add All Fields
+            添加所有字段
           </Button>
         </SplitItem>
       </Split>

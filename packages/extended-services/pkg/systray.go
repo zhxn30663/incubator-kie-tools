@@ -81,13 +81,13 @@ func (s *Systray) onExit() {
 }
 
 func (s *Systray) Start() {
-	fmt.Println("Executing Start command")
+	fmt.Println("正在执行启动命令")
 	s.StartStopItem.SetTitle(metadata.STARTING)
 	s.Server.Start()
 }
 
 func (s *Systray) Stop() {
-	fmt.Println("Executing Stop command")
+	fmt.Println("正在执行停止命令")
 	s.StartStopItem.SetTitle(metadata.STOPPING)
 	s.Server.Stop()
 }
@@ -169,7 +169,7 @@ func (s *Systray) openBrowser(url string) {
 	case "darwin":
 		err = exec.Command("open", url).Start()
 	default:
-		err = fmt.Errorf("unsupported platform")
+		err = fmt.Errorf("不支持的平台")
 	}
 	if err != nil {
 		log.Fatal(err)

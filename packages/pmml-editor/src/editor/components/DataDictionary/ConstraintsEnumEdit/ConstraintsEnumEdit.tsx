@@ -59,7 +59,7 @@ const ConstraintsEnumEdit = (props: ConstraintsEnumEditProps) => {
   };
 
   const handleTab = () => {
-    console.log("tab detected");
+    console.log("检测到Tab键");
   };
 
   const onSortEnd = ({ oldIndex, newIndex }: { oldIndex: number; newIndex: number }) => {
@@ -85,7 +85,7 @@ const ConstraintsEnumEdit = (props: ConstraintsEnumEditProps) => {
           <StackItem>
             <TextContent>
               <Text component={TextVariants.small}>
-                Add constraints values to limit and define valid inputs for the data type.
+                添加约束值以限制和定义数据类型的有效输入。
               </Text>
             </TextContent>
           </StackItem>
@@ -102,7 +102,7 @@ const ConstraintsEnumEdit = (props: ConstraintsEnumEditProps) => {
           </StackItem>
           <StackItem>
             <Button variant={ButtonVariant.secondary} onClick={addOne} ouiaId="add-another-value">
-              Add another value
+              添加其他值
             </Button>
           </StackItem>
         </Stack>
@@ -204,7 +204,7 @@ const EnumItem = SortableElement(({ enumValue, enumsCount, position, onUpdate, o
         <FlexItem>
           <Button
             variant="plain"
-            aria-label="Drag to sort"
+            aria-label="拖动排序"
             component={"span"}
             isDisabled={enumsCount === 1}
             ouiaId="drag-it"
@@ -218,7 +218,7 @@ const EnumItem = SortableElement(({ enumValue, enumsCount, position, onUpdate, o
             type="text"
             id={`enum-value-${position}`}
             name={`enum-value-${position}`}
-            placeholder="Please enter a value"
+            placeholder="请输入一个值"
             value={enumeration}
             onChange={handleChange}
             onBlur={handleSave}

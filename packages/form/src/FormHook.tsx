@@ -142,7 +142,7 @@ export function useForm<Input extends Record<string, any>, Schema extends Record
 
       setFormStatus(FormStatus.WITHOUT_ERROR);
     } catch (err) {
-      console.error(err);
+      console.error("表单验证器错误：", err);
       setFormStatus(FormStatus.VALIDATOR_ERROR);
     }
   }, [setFormInputs, formSchema, formValidator, entryPath, removeRequired]);

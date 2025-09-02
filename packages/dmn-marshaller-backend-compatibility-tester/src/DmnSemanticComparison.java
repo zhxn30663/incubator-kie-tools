@@ -92,16 +92,16 @@ class DmnSemanticComparison extends DmnMarshallerBackendCompatibilityTesterScrip
                             || importedGeneratedDmnPaths == null ||
                             importedGeneratedDmnPaths.length == 0
                             || importedOriginalDmnPaths.length != importedGeneratedDmnPaths.length) {
-                        throw new IllegalArgumentException("Imported DMN paths are missing or wrong");
+                        throw new IllegalArgumentException("缺少或错误的导入DMN路径");
                     }
                     return compareDMNModelsWithImports();
                 }
                 default:
-                    LOGGER.error("Unknown command {}", command);
+                    LOGGER.error("未知命令 {}", command);
                     return 1;
             }
         } catch (Exception e) {
-            LOGGER.error("Failed to execute {}", command, e);
+            LOGGER.error("执行 {}" + "失败", command, e);
             return 100;
         }
     }
@@ -110,8 +110,8 @@ class DmnSemanticComparison extends DmnMarshallerBackendCompatibilityTesterScrip
         DMNModel originalModel = instantiateDMNRuntimeAndReturnDMNModel(new File(originalDmnPath));
         DMNModel generatedModel = instantiateDMNRuntimeAndReturnDMNModel(new File(generatedDmnPath));
 
-        LOGGER.info("========== SEMANTIC COMPARISON ==========");
-        LOGGER.info("Evaluating DMN file: " + originalModel.getName());
+        LOGGER.info("========== 语义比较 ==========");
+        LOGGER.info("正在评估DMN文件：" + originalModel.getName());
 
         return compareDMNModels(originalModel, generatedModel);
     }
@@ -129,8 +129,8 @@ class DmnSemanticComparison extends DmnMarshallerBackendCompatibilityTesterScrip
         DMNModel generatedModel = instantiateDMNRuntimeAndReturnDMNModel(new File(generatedDmnPath),
                 importedGeneratedDmnFiles);
 
-        LOGGER.info("========== SEMANTIC COMPARISON ==========");
-        LOGGER.info("Evaluating DMN file: " + originalModel.getName());
+        LOGGER.info("========== 语义比较 ==========");
+        LOGGER.info("正在评估DMN文件：" + originalModel.getName());
 
         return compareDMNModels(originalModel, generatedModel);
     }
@@ -171,7 +171,7 @@ class DmnSemanticComparison extends DmnMarshallerBackendCompatibilityTesterScrip
         }
 
         if (importerModel == null) {
-            throw new IllegalStateException("Was not able to identify importer model: " + importerFileSourcePath);
+            throw new IllegalStateException("无法识别导入器模型：" + importerFileSourcePath);
         }
         return importerModel;
     }
@@ -215,13 +215,13 @@ class DmnSemanticComparison extends DmnMarshallerBackendCompatibilityTesterScrip
                 originalModelDefinitions.getItemDefinition()));
 
         if (missingElementsMessages.isEmpty()) {
-            LOGGER.info("RESULT: Original and Generated files are semantically the same!");
+            LOGGER.info("结果：原始文件和生成文件在语义上是相同的！");
             return 0;
         } else {
-            LOGGER.error("ERROR: Original and Generated files are NOT semantically the same!");
+            LOGGER.error("错误：原始文件和生成文件在语义上不相同！");
             missingElementsMessages.forEach(message -> LOGGER.error(message));
-            System.err.println("ERROR: Original and Generated files are NOT semantically the same!");
-            System.err.println("DMN File Name: " + originalModel.getName());
+            System.err.println("错误：原始文件和生成文件在语义上不相同！");
+            System.err.println("DMN文件名：" + originalModel.getName());
             missingElementsMessages.forEach(System.err::println);
             return 1;
         }
@@ -240,7 +240,7 @@ class DmnSemanticComparison extends DmnMarshallerBackendCompatibilityTesterScrip
      */
     static <T extends NamedElement> List<String> checkElements(Collection<T> target, Collection<T> source) {
         return source.stream().filter(sourceElement -> checkIfAbsent(target, sourceElement))
-                .map(sourceElement -> "Missing element: " + sourceElement.getName())
+                .map(sourceElement -> "缺少元素：" + sourceElement.getName())
                 .collect(Collectors.toList());
     }
 

@@ -202,7 +202,7 @@ export const Diagram = React.forwardRef<DiagramRef, { container: React.RefObject
 
     const onConnect = useCallback<RF.OnConnect>(
       ({ source, target, sourceHandle, targetHandle }) => {
-        console.debug("DMN DIAGRAM: `onConnect`: ", { source, target, sourceHandle, targetHandle });
+        console.debug("DMN 图表：`onConnect` 连接：", { source, target, sourceHandle, targetHandle });
         dmnEditorStoreApi.setState((state) => {
           const sourceNode = state.computed(state).getDiagramData(externalModelsByNamespace).nodesById.get(source!);
           const targetNode = state.computed(state).getDiagramData(externalModelsByNamespace).nodesById.get(target!);
@@ -587,7 +587,7 @@ export const Diagram = React.forwardRef<DiagramRef, { container: React.RefObject
 
     const onConnectStart = useCallback<RF.OnConnectStart>(
       (e, newConnection) => {
-        console.debug("DMN DIAGRAM: `onConnectStart`");
+        console.debug("DMN 图表：`onConnectStart` 开始连接");
         dmnEditorStoreApi.setState((state) => {
           state.diagram.ongoingConnection = newConnection;
         });
@@ -597,7 +597,7 @@ export const Diagram = React.forwardRef<DiagramRef, { container: React.RefObject
 
     const onConnectEnd = useCallback(
       (e: MouseEvent) => {
-        console.debug("DMN DIAGRAM: `onConnectEnd`");
+        console.debug("DMN 图表：`onConnectEnd` 结束连接");
 
         dmnEditorStoreApi.setState((state) => {
           const targetIsPane = (e.target as Element | null)?.classList?.contains("react-flow__pane");

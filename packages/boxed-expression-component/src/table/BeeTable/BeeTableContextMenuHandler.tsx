@@ -202,7 +202,7 @@ export function BeeTableContextMenuHandler({
       if (nonPlaceholderColumns) {
         return nonPlaceholderColumns[columnIndex];
       } else {
-        console.error(`No column found at [${rowIndex}, ${columnIndex}]`);
+        console.error(`在位置[${rowIndex}, ${columnIndex}]未找到列`);
       }
     } else {
       return columns?.[columnIndex];
@@ -317,7 +317,7 @@ export function BeeTableContextMenuHandler({
             columnsCount: 1,
             insertDirection: InsertRowColumnsDirection.BelowOrLeft,
           });
-          console.debug(`Insert column left to ${columnIndex}`);
+          console.debug(`在第${columnIndex}列左侧插入列`);
           break;
         case BeeTableOperation.ColumnInsertRight:
           onColumnAdded?.({
@@ -327,7 +327,7 @@ export function BeeTableContextMenuHandler({
             columnsCount: 1,
             insertDirection: InsertRowColumnsDirection.AboveOrRight,
           });
-          console.debug(`Insert column right to ${columnIndex}`);
+          console.debug(`在第${columnIndex}列右侧插入列`);
           break;
         case BeeTableOperation.ColumnInsertN:
           if (direction === InsertRowColumnsDirection.AboveOrRight) {
@@ -347,14 +347,14 @@ export function BeeTableContextMenuHandler({
               insertDirection: InsertRowColumnsDirection.BelowOrLeft,
             });
           }
-          console.debug(`Insert n columns to ${columnIndex}`);
+          console.debug(`在第${columnIndex}列插入n列`);
           break;
         case BeeTableOperation.ColumnDelete:
           onColumnDeleted?.({
             columnIndex: columnIndex - 1,
             groupType: column?.groupType,
           });
-          console.debug(`Delete column ${columnIndex}`);
+          console.debug(`删除第${columnIndex}列`);
           break;
         case BeeTableOperation.RowInsertAbove:
           onRowAdded?.({
@@ -362,7 +362,7 @@ export function BeeTableContextMenuHandler({
             rowsCount: 1,
             insertDirection: InsertRowColumnsDirection.AboveOrRight,
           });
-          console.debug(`Insert row above to ${rowIndex}`);
+          console.debug(`在第${rowIndex}行上方插入行`);
           break;
         case BeeTableOperation.RowInsertBelow:
           onRowAdded?.({
@@ -370,7 +370,7 @@ export function BeeTableContextMenuHandler({
             rowsCount: 1,
             insertDirection: InsertRowColumnsDirection.BelowOrLeft,
           });
-          console.debug(`Insert row below to ${rowIndex}`);
+          console.debug(`在第${rowIndex}行下方插入行`);
           break;
         case BeeTableOperation.RowInsertN:
           if (direction === InsertRowColumnsDirection.AboveOrRight) {
@@ -386,15 +386,15 @@ export function BeeTableContextMenuHandler({
               insertDirection: InsertRowColumnsDirection.BelowOrLeft,
             });
           }
-          console.debug(`Insert n rows to ${columnIndex}`);
+          console.debug(`插入n行到第${columnIndex}列`);
           break;
         case BeeTableOperation.RowDelete:
           onRowDeleted?.({ rowIndex: rowIndex });
-          console.debug(`Delete row ${rowIndex}`);
+          console.debug(`删除第${rowIndex}行`);
           break;
         case BeeTableOperation.RowReset:
           onRowReset?.({ rowIndex: rowIndex });
-          console.debug(`Reset row ${rowIndex}`);
+          console.debug(`重置第${rowIndex}行`);
           break;
         case BeeTableOperation.RowDuplicate:
           onRowDuplicated?.({ rowIndex: rowIndex });

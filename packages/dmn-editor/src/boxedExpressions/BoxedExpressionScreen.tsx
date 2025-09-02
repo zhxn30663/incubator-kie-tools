@@ -338,7 +338,7 @@ export function BoxedExpressionScreen({ container }: { container: React.RefObjec
               }}
             >
               <ArrowRightIcon style={{ transform: "scale(-1, -1)", marginRight: "12px" }} />
-              <p>Back to Diagram</p>
+              <p>返回图表</p>
             </Label>
           </FlexItem>
           <FlexItem>

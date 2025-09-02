@@ -57,9 +57,9 @@ export function OverlaysPanel({ availableHeight }: OverlaysPanelProps) {
       <Form
         onKeyDown={(e) => e.stopPropagation()} // Prevent ReactFlow KeyboardShortcuts from triggering when editing stuff on Overlays Panel
       >
-        <FormGroup label="Snapping">
+        <FormGroup label="对齐">
           <Switch
-            aria-label={"Snapping"}
+            aria-label="对齐"
             isChecked={diagram.snapGrid.isEnabled}
             onChange={(newValue) =>
               dmnEditorStoreApi.setState((state) => {
@@ -68,7 +68,7 @@ export function OverlaysPanel({ availableHeight }: OverlaysPanelProps) {
             }
           />
         </FormGroup>
-        <FormGroup label="Horizontal">
+        <FormGroup label="水平">
           <Slider
             data-testid={"kie-tools--dmn-editor--horizontal-snapping-control"}
             className={"kie-dmn-editor--snap-slider"}
@@ -88,7 +88,7 @@ export function OverlaysPanel({ availableHeight }: OverlaysPanelProps) {
             }
           />
         </FormGroup>
-        <FormGroup label="Vertical">
+        <FormGroup label="垂直">
           <Slider
             data-testid={"kie-tools--dmn-editor--vertical-snapping-control"}
             className={"kie-dmn-editor--snap-slider"}

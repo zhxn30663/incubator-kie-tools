@@ -71,7 +71,7 @@ export class EnvelopeClient<
     message: EnvelopeBusMessage<T, FunctionPropertyNames<ApiToProvide> | FunctionPropertyNames<ApiToConsume>>
   ) {
     if (!this.targetOrigin || !this.associatedEnvelopeServerId) {
-      throw new Error("Tried to send message without associated Envelope Server set");
+      throw new Error("尝试发送消息但未设置关联的信封服务器");
     }
     this.bus.postMessage(
       {

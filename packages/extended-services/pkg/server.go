@@ -98,7 +98,7 @@ func (p *Proxy) Start() {
 		ReadTimeout:  15 * time.Second,
 	}
 
-	fmt.Printf("Server started: %s \n", addr)
+	fmt.Printf("服务器已启动：%s \n", addr)
 
 	go p.server.ListenAndServe()
 	go p.GracefulShutdown()
@@ -112,14 +112,14 @@ func (p *Proxy) GracefulShutdown() {
 	<-c
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
-	log.Println("Signal detected, shutting down...")
+	log.Println("检测到信号，正在关闭...")
 	p.Stop()
 	p.server.Shutdown(ctx)
 	os.Exit(0)
 }
 
 func (p *Proxy) Stop() {
-	log.Println("Shutting down")
+	log.Println("正在关闭")
 
 	p.cmd.Process.Kill()
 
@@ -127,9 +127,9 @@ func (p *Proxy) Stop() {
 	defer cancel()
 
 	if err := p.server.Shutdown(ctx); err != nil {
-		log.Fatalf("Server Shutdown Failed:%+v", err)
+		log.Fatalf("服务器关闭失败：%+v", err)
 	}
-	log.Println("Shutdown complete")
+	log.Println("关闭完成")
 
 	p.RunnerPort = "0"
 	p.Started = false

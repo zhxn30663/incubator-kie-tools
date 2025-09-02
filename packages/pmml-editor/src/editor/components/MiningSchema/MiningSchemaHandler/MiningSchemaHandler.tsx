@@ -97,7 +97,7 @@ const MiningSchemaHandler = (props: MiningSchemaHandlerProps) => {
     <Split hasGutter={true}>
       <SplitItem isFilled={true}>
         <Title headingLevel="h1" size={TitleSizes["2xl"]}>
-          Mining Schema
+          挖掘模式
         </Title>
       </SplitItem>
       <SplitItem>
@@ -123,7 +123,7 @@ const MiningSchemaHandler = (props: MiningSchemaHandlerProps) => {
           data-title="MiningSchema"
           ouiaId="open-mining-schema-editor"
         >
-          Set Mining Schema
+          设置挖掘模式
         </Button>
       )}
       {validations.length > 0 && (
@@ -135,7 +135,7 @@ const MiningSchemaHandler = (props: MiningSchemaHandlerProps) => {
             data-title="MiningSchema"
             ouiaId="open-mining-schema-editor"
           >
-            Set Mining Schema
+            设置挖掘模式
           </Button>
         </ValidationIndicatorTooltip>
       )}

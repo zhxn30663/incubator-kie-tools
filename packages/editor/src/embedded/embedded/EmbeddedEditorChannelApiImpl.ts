@@ -52,7 +52,7 @@ export class EmbeddedEditorChannelApiImpl implements KogitoEditorChannelApi {
         this.stateControl.undo();
         break;
       default:
-        console.info(`Unknown message type received: ${command}`);
+        console.info(`收到未知消息类型：${command}`);
         break;
     }
     this.overrides.kogitoEditor_stateControlCommandUpdate?.(command);

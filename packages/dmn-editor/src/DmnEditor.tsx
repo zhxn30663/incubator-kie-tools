@@ -281,7 +281,7 @@ export const DmnEditorInternal = ({
       }
 
       onModelDebounceStateChanged?.(true);
-      console.debug("DMN EDITOR: Model changed!");
+      console.debug("DMN 编辑器：模型已改变！");
       onModelChange?.(dmn.model);
     }, ON_MODEL_CHANGE_DEBOUNCE_TIME_IN_MS);
 

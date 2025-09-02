@@ -236,7 +236,7 @@ export function getMarshaller<V extends DmnMarshallerVersions>(
   // We check if `targetVersion` is not prior to the actual version on the XML. If it is, it's an error. We don't downgrade DMN XMLs.
   if (DMN_VERSIONS_TIMELINE.indexOf(originalMarshaller.version) > DMN_VERSIONS_TIMELINE.indexOf(targetVersion)) {
     throw new Error(
-      `DMN MARSHALLER: Cannot build DMN ${targetVersion} marshaller from a model that's already in version '${originalMarshaller.version}'. Downgrading DMN models is not possible.`
+      `DMN序列化器：无法从已是版本'${originalMarshaller.version}'的模型构建DMN ${targetVersion}序列化器。不支持降级DMN模型。`
     );
   }
 
@@ -271,20 +271,20 @@ export function getMarshaller<V extends DmnMarshallerVersions>(
       if (targetVersion === "1.5") break;
     case "1.5":
       throw new Error(
-        "DMN MARSHALLER: Unexpected error. Shouldn't ever try to migrate a DMN 1.5, as DMN 1.5 is latest."
+        "DMN序列化器：意外错误。不应该尝试迁移DMN 1.5，因为DMN 1.5是最新版本。"
       );
   }
 
   // DMN 1.0 won't ever be here, because it is the first verison.
   const upgradedJson = dmn15 ?? dmn14 ?? dmn13 ?? dmn12 ?? dmn11;
   if (!upgradedJson) {
-    throw new Error("DMN MARSHALLER: Unexpected error. At least one upgraded model should've been created.");
+    throw new Error("DMN序列化器：意外错误。至少应该创建一个升级的模型。");
   }
 
   // Get the correct parser based on the new version.
   const parserForUpgradedJson = DMN_PARSERS[targetVersion];
   if (!parserForUpgradedJson) {
-    throw new Error(`DMN MARSHALLER: Unexpected error. Couldn't find parser for version '${targetVersion}'.`);
+    throw new Error(`DMN序列化器：意外错误。找不到版本'${targetVersion}'的解析器。`);
   }
 
   // We need to gerenate the instanceNs because the migrations will have changed it.
@@ -313,9 +313,9 @@ export function getKieExtensionVersion(instanceNs: Map<string, string>): KieExte
     return "1.0";
   } else {
     throw new Error(
-      `DMN MARSHALLER: Unknown version declared for DMN. Instance NS --> '${JSON.stringify([
+      `DMN序列化器：DMN声明的版本未知。实例命名空间 --> '${JSON.stringify([
         ...instanceNs.entries(),
-      ])}'.`
+      ])}'。`
     );
   }
 }
@@ -348,9 +348,9 @@ export function getDmnVersion(instanceNs: Map<string, string>): DmnVersions {
   // None.. throw error
   else {
     throw new Error(
-      `DMN MARSHALLER: Unknown version declared for DMN. Instance NS --> '${JSON.stringify([
+      `DMN序列化器：DMN声明的版本未知。实例命名空间 --> '${JSON.stringify([
         ...instanceNs.entries(),
-      ])}'.`
+      ])}'。`
     );
   }
 }
@@ -415,9 +415,9 @@ export function getMarshallerForFixedVersion(domdoc: Document, instanceNs: Map<s
       };
     default:
       throw new Error(
-        `DMN MARSHALLER: Unknown version declared for DMN. Instance NS --> '${JSON.stringify([
+        `DMN序列化器：DMN声明的版本未知。实例命名空间 --> '${JSON.stringify([
           ...instanceNs.entries(),
-        ])}'.`
+        ])}'。`
       );
   }
 }
@@ -434,7 +434,7 @@ const kieLegacyNs = new Map([
 ////////////////////////
 
 export function upgrade10to11(dmn10: { Definitions: DMN10__tDefinitions }): { definitions: DMN11__tDefinitions } {
-  throw new Error("DMN MARSHALLER: Upgrading from DMN 1.0 is not supported. Minimum version is 1.2.");
+  throw new Error("DMN序列化器：不支持从DMN 1.0升级。最低版本是1.2。");
 }
 
 ////////////////////////
@@ -442,7 +442,7 @@ export function upgrade10to11(dmn10: { Definitions: DMN10__tDefinitions }): { de
 ////////////////////////
 
 export function upgrade11to12(dmn11: { definitions: DMN11__tDefinitions }): { definitions: DMN12__tDefinitions } {
-  throw new Error("DMN MARSHALLER: Upgrading from DMN 1.1 is not supported. Minimum version is 1.2.");
+  throw new Error("DMN序列化器：不支持从DMN 1.1升级。最低版本是1.2。");
 }
 
 ////////////////////////

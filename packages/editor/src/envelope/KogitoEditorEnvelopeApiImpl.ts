@@ -213,7 +213,7 @@ export class KogitoEditorEnvelopeApiImpl<
   protected getEditorOrThrowError(): E {
     const editor = this.view().getEditor();
     if (!editor) {
-      throw new Error("Editor not found.");
+      throw new Error("找不到编辑器。");
     }
     return editor;
   }

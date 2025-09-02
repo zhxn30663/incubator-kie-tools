@@ -149,7 +149,7 @@ export async function dereferenceAndCheckForRecursion(
     }
     return resolved;
   } catch (err) {
-    console.log(err);
+    console.log("错误：", err);
     return;
   }
 }

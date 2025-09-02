@@ -43,7 +43,7 @@ export class ErrorBoundary extends React.Component<Props, State> {
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     this.props.setHasError(true);
-    console.error("Error", error, errorInfo);
+    console.error("错误", error, errorInfo);
   }
 
   public render() {

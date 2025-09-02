@@ -21,18 +21,18 @@ import { EditorEnvelopeI18n } from "../EditorEnvelopeI18n";
 
 export const en: EditorEnvelopeI18n = {
   keyBindingsHelpOverlay: {
-    title: "Keyboard shortcuts",
+    title: "键盘快捷键",
     categories: {
-      edit: "Edit",
-      help: "Help",
+      edit: "编辑",
+      help: "帮助",
     },
     commands: {
-      undo: "Undo last edit",
-      redo: "Redo last edit",
-      showKeyboardOverlay: "Show keyboard shortcuts",
+      undo: "撤销上一次编辑",
+      redo: "重做上一次编辑",
+      showKeyboardOverlay: "显示键盘快捷键",
     },
   },
   loadingScreen: {
-    loading: "Loading...",
+    loading: "加载中...",
   },
 };

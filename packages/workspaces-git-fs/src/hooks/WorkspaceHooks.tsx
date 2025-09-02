@@ -127,7 +127,7 @@ export function useWorkspacePromise(workspaceId: string | undefined) {
         setWorkspacePromise({ data: { descriptor, files } });
       } catch (error) {
         setWorkspacePromise({ error: `Can't find Workspace with id '${workspaceId}'` });
-        console.error(error);
+        console.error("获取工作区间时出错：", error);
         return;
       }
     },
@@ -152,7 +152,7 @@ export function useWorkspacePromise(workspaceId: string | undefined) {
 
         const broadcastChannel = new BroadcastChannel(workspaceId);
         broadcastChannel.onmessage = ({ data }: MessageEvent<WorkspaceBroadcastEvents>) => {
-          console.debug(`EVENT::WORKSPACE: ${JSON.stringify(data)}`);
+          console.debug(`事件::WORKSPACE: ${JSON.stringify(data)}`);
           return refresh(canceled);
         };
 

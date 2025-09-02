@@ -620,7 +620,7 @@ export class VariablesRepository {
         break;
 
       default:
-      // throw new Error("Unknown or not supported type for expression.");
+      // throw new Error("表达式的类型未知或不受支持。");
     }
   }
 

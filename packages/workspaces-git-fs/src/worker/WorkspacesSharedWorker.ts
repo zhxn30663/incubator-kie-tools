@@ -38,7 +38,7 @@ export class WorkspacesSharedWorker {
     if (this.IS_API_AVAILABLE) {
       this.createWorker();
     } else {
-      console.debug("SharedWorker API not available");
+      console.debug("SharedWorker API不可用");
     }
 
     this.workspacesWorkerBus = new EnvelopeBusMessageManager<WorkspacesWorkerChannelApi, WorkspacesWorkerApi>((m) => {
@@ -64,7 +64,7 @@ export class WorkspacesSharedWorker {
     this.workspacesWorker.port.start();
 
     this.ready = new Promise<void>((res) => {
-      console.debug(`${this.args.workerName} is ready.`);
+      console.debug(`${this.args.workerName}已准备好。`);
 
       this.workspacesWorker!.port.onmessage = (m) => {
         this.workspacesWorkerBus.server.receive(m.data, {

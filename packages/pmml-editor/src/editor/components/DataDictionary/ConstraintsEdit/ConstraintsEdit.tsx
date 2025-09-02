@@ -195,15 +195,15 @@ const ConstraintsEdit = (props: ConstraintsEditProps) => {
     <section className="constraints__form">
       <FormGroup
         fieldId="constraints-type"
-        label="Constraints Type"
+        label="约束类型"
         helperText={
-          enabledTypeOptionsCount > 1 ? "Select the type of constraint and then fill in the required fields." : ""
+          enabledTypeOptionsCount > 1 ? "选择约束类型，然后填写必填字段。" : ""
         }
         labelIcon={
           typeDescription.length > 0 ? (
             <Tooltip content={typeDescription}>
               <button
-                aria-label="More info for Constraints Type"
+                aria-label="约束类型的更多信息"
                 onClick={(e) => e.preventDefault()}
                 aria-describedby="constraints-type"
                 className="pf-c-form__group-label-help"
@@ -221,12 +221,12 @@ const ConstraintsEdit = (props: ConstraintsEditProps) => {
           <Select
             id="constraints-type"
             variant={SelectVariant.single}
-            aria-label="Select Constraint Type"
+            aria-label="选择约束类型"
             onToggle={handleTypeToggle}
             onSelect={handleTypeChange}
             selections={constraintType}
             isOpen={typeSelectIsOpen}
-            placeholderText={"Select a type"}
+            placeholderText={"选择类型"}
             isDisabled={enabledTypeOptionsCount === 1}
             ouiaId="constraints-type"
           >
@@ -287,9 +287,9 @@ const reorderArray = <T extends unknown>(list: T[], startIndex: number, endIndex
 
 const getConstraintsTypeOptions = (dataType: DDDataField) => {
   const typeOptions = [
-    { value: ConstraintType.NONE, label: "Select a type", disabled: false },
-    { value: ConstraintType.RANGE, label: "Interval", disabled: false },
-    { value: ConstraintType.ENUMERATION, label: "Value", disabled: false },
+    { value: ConstraintType.NONE, label: "选择类型", disabled: false },
+    { value: ConstraintType.RANGE, label: "区间", disabled: false },
+    { value: ConstraintType.ENUMERATION, label: "取值", disabled: false },
   ];
   if (dataType.type === "string" && dataType.optype === "ordinal") {
     typeOptions[0].disabled = true;
@@ -307,16 +307,16 @@ const getConstraintsTypeOptions = (dataType: DDDataField) => {
 
 const getConstraintsTypeDescription = (dataType: DDDataField) => {
   if (dataType.optype === "ordinal" && dataType.isCyclic) {
-    return "Cyclic ordinal data types must have Value constraints";
+    return "循环有序数据类型必须具有取值约束";
   }
   if (dataType.optype === "continuous" && dataType.isCyclic) {
-    return "Cyclic continuous data types must have constraints";
+    return "循环连续数据类型必须具有约束";
   }
   if (dataType.type === "string" && dataType.optype === "ordinal") {
-    return "Ordinal strings must have Value constraints";
+    return "有序字符串必须具有取值约束";
   }
   if (dataType.optype !== "continuous") {
-    return "Only continuous data types can have Interval constraints";
+    return "只有连续数据类型才能具有区间约束";
   }
   return "";
 };

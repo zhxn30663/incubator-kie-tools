@@ -234,12 +234,12 @@ export function getClipboard<T extends { mimeType: string }>(text: string, mimeT
   try {
     potentialClipboard = JSON.parse(text);
   } catch (e) {
-    console.debug("DMN DIAGRAM: Ignoring pasted content. Not a valid JSON.");
+    console.debug("DMN 图表：已忽略粘贴内容。不是有效的 JSON 格式。");
     return undefined;
   }
 
   if (!potentialClipboard || potentialClipboard.mimeType !== mimeType) {
-    console.debug("DMN DIAGRAM: Ignoring pasted content. MIME type doesn't match.");
+    console.debug("DMN 图表：已忽略粘贴内容。MIME 类型不匹配。");
     return undefined;
   }
 

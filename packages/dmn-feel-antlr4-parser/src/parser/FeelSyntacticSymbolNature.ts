@@ -19,38 +19,38 @@
 
 export enum FeelSyntacticSymbolNature {
   /**
-   * Symbol not recognized.
+   * 未识别的符号。
    */
   Unknown,
 
   /**
-   * A symbol defined in a Decision or Input node.
+   * 在决策或输入节点中定义的符号。
    */
   GlobalVariable,
 
   /**
-   * Decision Service and Business Knowledge Model are invocable.
+   * 决策服务和业务知识模型是可调用的。
    */
   Invocable,
 
   /**
-   * Local variables.
+   * 局部变量。
    */
   LocalVariable,
 
   /**
-   * Parameters of functions.
+   * 函数参数。
    */
   Parameter,
 
   /**
-   * Variables which the parser currently doesn't know if it is valid or not because they are validated at runtime.
+   * 解析器当前不知道是否有效的变量，因为它们在运行时进行验证。
    */
   DynamicVariable,
 
   /**
-   * Invisible variables are variables used only for the tree structure purpose of the VariablesRepository
-   * and are not available to the user.
+   * 不可见变量是仅用于变量库的树结构目的的变量，
+   * 用户无法使用。
    */
   InvisibleVariables,
 }

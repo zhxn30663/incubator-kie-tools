@@ -45,7 +45,7 @@ export class DmnEditorInterface implements Editor {
   private self: DmnEditorRoot;
   public af_isReact = true;
   public af_componentId: "dmn-editor";
-  public af_componentTitle: "DMN Editor";
+  public af_componentTitle: "DMN编辑器";
 
   constructor(
     private readonly envelopeContext: KogitoEditorEnvelopeContextType<KogitoEditorChannelApi>,

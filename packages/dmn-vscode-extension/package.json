@@ -1,7 +1,7 @@
 {
   "name": "dmn-vscode-extension",
   "version": "10.0.0",
-  "description": "Edit DMN and Test Scenario files",
+  "description": "编辑DMN和测试场景文件",
   "license": "Apache-2.0",
   "publisher": "kie-group",
   "keywords": [],
@@ -56,7 +56,7 @@
   "engines": {
     "vscode": "^1.67.0"
   },
-  "displayName": "Apache KIE™ DMN Editor",
+  "displayName": "Apache KIE™ DMN编辑器",
   "categories": [
     "Other"
   ],
@@ -68,11 +68,11 @@
           "dark": "./static/svg-icon-dark.png",
           "light": "./static/svg-icon-light.png"
         },
-        "title": "Generate DMN Editor preview SVG (classic)"
+        "title": "生成DMN编辑器预览SVG（经典版）"
       },
       {
         "command": "extension.kogito.silentlyGenerateSvgDmn",
-        "title": "Generate DMN Editor preview SVG (classic) without any notification"
+        "title": "生成DMN编辑器预览SVG（经典版）而不显示任何通知"
       },
       {
         "command": "extension.kie.tools.generatePreviewSvgDmn",
@@ -80,35 +80,35 @@
           "dark": "./static/svg-icon-dark.png",
           "light": "./static/svg-icon-light.png"
         },
-        "title": "Generate DMN preview SVG"
+        "title": "生成DMN预览SVG"
       },
       {
         "command": "extension.kie.tools.silentlyGenerateSvgDmn",
-        "title": "Generate DMN preview SVG without any notification"
+        "title": "生成DMN预览SVG而不显示任何通知"
       }
     ],
     "configuration": {
       "properties": {
         "kogito.dmn.runOnSave": {
-          "markdownDescription": "Execute a command on each save operation of the DMN file",
+          "markdownDescription": "在DMN文件的每次保存操作时执行命令",
           "type": "string"
         },
         "kogito.dmn.svgFilePath": {
           "default": "${fileDirname}",
-          "markdownDescription": "Where to save generated SVG files (defaults to same path as .dmn file: `${fileDirname}`).",
+          "markdownDescription": "保存生成的SVG文件的位置（默认为与.dmn文件相同的路径：`${fileDirname}`）。",
           "type": "string"
         },
         "kogito.dmn.svgFilenameTemplate": {
           "default": "${fileBasenameNoExtension}-svg.svg",
-          "markdownDescription": "Filename template to be used when generating SVG files (defaults to `${fileBasenameNoExtension}-svg.svg`).",
+          "markdownDescription": "生成SVG文件时使用的文件名模板（默认为`${fileBasenameNoExtension}-svg.svg`）。",
           "type": "string"
         }
       },
-      "title": "DMN Editor"
+      "title": "DMN编辑器"
     },
     "customEditors": [
       {
-        "displayName": "KIE DMN/SceSim Editors (classic)",
+        "displayName": "KIE DMN/SceSim编辑器（经典版）",
         "selector": [
           {
             "filenamePattern": "*.{dmn,scesim}"
@@ -117,7 +117,7 @@
         "viewType": "kieKogitoWebviewEditorsDmn"
       },
       {
-        "displayName": "KIE DMN Editor",
+        "displayName": "KIE DMN编辑器",
         "selector": [
           {
             "filenamePattern": "*.dmn"
@@ -134,7 +134,7 @@
         "aliases": [
           "dmn",
           "DMN",
-          "Decision Model and Notation"
+          "决策模型和记号"
         ],
         "extensions": [
           ".dmn",
@@ -146,7 +146,7 @@
         "aliases": [
           "scesim",
           "SCESIM",
-          "Test Scenario"
+          "测试场景"
         ],
         "extensions": [
           ".scesim",
